@@ -20,11 +20,78 @@ public class RBTree {
 			left = right = parent = null;
 			color = Color.RED;
 		}
+		
+		// returns instance to uncle
+		Node uncle()
+		{
+			// if no parent or grandparent, then no uncle
+			if(parent==null || parent.parent==null)
+			{
+				return null;
+			}
+			
+			if(parent.isOnLeft())
+			{
+				// uncle on right
+				return parent.parent.right;
+			}
+			else
+			{
+				return parent.parent.left;
+			}
+		}
+		
+		// check if node is left child of parent
+		boolean isOnLeft()
+		{
+			return this == parent.left;
+		}
+		
+		// returns instance to sibling
+		Node sibling()
+		{
+			// sibling null if no parent
+			if(parent==null)
+			{
+				return null;
+			}
+			
+			if(isOnLeft())
+			{
+				return parent.right;
+			}
+			return parent.left;
+		}
+		
+		// moves node down and moves given node in its place
+		void moveDown(Node nParent)
+		{
+			if(parent!=null)
+			{
+				if(isOnLeft())
+				{
+					parent.left = nParent;
+				}
+				else
+				{
+					parent.right = nParent;
+				}
+			}
+			nParent.parent = parent;
+			parent = nParent;
+		}
+		
+		boolean hasRedChild()
+		{
+			return (left!=null && left.color==Color.RED) ||
+					(right!=null && right.color==Color.RED);
+		}
 	}
 	
 	RBTree() {
 		this.root = null;
 	}
+	
 
 	// x 기준 왼쪽 회전
 	private Node rotateLeft(Node root, Node pt)
@@ -143,7 +210,7 @@ public class RBTree {
 					 * Right-rotation required
 					 * */
 					root = rotateRight(root, grand_parent_pt);
-					swap(parent_pt, grand_parent_pt);
+					swapColors(parent_pt, grand_parent_pt);
 					pt = parent_pt;
 				}
 			}
@@ -184,7 +251,7 @@ public class RBTree {
 					 * Left-rotation required
 					 * */
 					root = rotateLeft(root, grand_parent_pt);
-					swap(parent_pt, grand_parent_pt);
+					swapColors(parent_pt, grand_parent_pt);
 					pt = parent_pt;
 				}
 			}
@@ -193,11 +260,30 @@ public class RBTree {
 		return root;
 	}
 
-	private void swap(Node x, Node y) {
+	private void swapColors(Node x, Node y) {
 		// TODO Auto-generated method stub
 		Color temp = x.color;
 		x.color = y.color;
 		y.color = temp;
+	}
+	
+	private void swapValues(Node u, Node v)
+	{
+		int temp = u.data;
+		u.data = v.data;
+		v.data = temp;
+	}
+	
+	// find node that do not have a left child
+	// in the subtree of the given node
+	Node successor(Node x)
+	{
+		Node temp = x;
+		while(temp.left!=null)
+		{
+			temp = temp.left;
+		}
+		return temp;
 	}
 
 	// 트리에 노드 삽입
@@ -240,33 +326,50 @@ public class RBTree {
 		return root;
 	}
 	
-	void inorder()
+	void printIninorder()
 	{
-		inorderHelper(root);
+		System.out.println("Inorder: ");
+		if(root==null)
+		{
+			System.out.println("Tree is empty");
+		}
+		else
+		{
+			inorder(root);
+		}
+		
 		System.out.println();
 	}
 	
 	// 중위 순회
-	private void inorderHelper(Node root)
+	private void inorder(Node root)
 	{
 		if(root==null)
 		{
 			return;
 		}
 		
-		inorderHelper(root.left);
+		inorder(root.left);
 		System.out.print(root.data + " ");
-		inorderHelper(root.right);
+		inorder(root.right);
 	}
 	
-	void levelorder()
+	void printLevelOrder()
 	{
-		levelorderHelper(root);
+		System.out.println("Level order: ");
+		if(root==null)
+		{
+			System.out.println("Tree is empty");
+		}
+		else
+		{
+			levelorder(root);
+		}
 		System.out.println();
 	}
 	
 	// 레벨 순회
-	private void levelorderHelper(Node root)
+	private void levelorder(Node root)
 	{
 		if(root==null)
 		{
@@ -291,6 +394,271 @@ public class RBTree {
 				q.add(temp.right);
 			}	
 		}
+	}
+
+	// utility function that deletes the node with given value
+	void deleteByVal(int n) {
+		if(root==null)
+		{
+			// Tree is empty
+			return;
+		}
+		
+		Node v = search(n);
+		Node u = null;
+		
+		if(v.data!=n)
+		{
+			System.out.println("No node found to delete with value:");
+			return;
+		}
+		deleteNode(v);
+	}
+
+	// deletes the given node
+	void deleteNode(Node v) {
+		Node u = BSTreplace(v);
+		
+		// True when u and v are both black
+		boolean uvBlack = ((u==null || u.color==Color.BLACK) && (v.color==Color.BLACK));
+		Node parent = v.parent;
+		
+		if(u==null)
+		{
+			// u is null therefore v is leaf
+			if(v==root)
+			{
+				// v is root, making root null
+				root = null;
+			}
+			else
+			{
+				if(uvBlack) 
+				{
+					// u and v both black
+					// v is leaf, fix double black at v
+					fixDoubleBlack(v);
+				}
+				else
+				{
+					// u or v is red
+					if(v.sibling()!=null)
+					{
+						// sibling is not null, make it red
+						v.sibling().color = Color.RED;
+					}
+				}
+				
+				// delete v from the ree
+				if(v.isOnLeft())
+				{
+					parent.left = null;
+				}
+				else
+				{
+					parent.right = null;
+				}
+			}
+			v = null;
+			return;
+		}
+		
+		if(v.left==null || v.right==null)
+		{
+			// v has 1 child
+			if(v==root)
+			{
+				// v is root, assign the value of u to v, and delete u
+				v.data = u.data;
+				v.left = v.right = null;
+				u = null;
+			}
+			else
+			{
+				// detach v from tree and move u up
+				if(v.isOnLeft())
+				{
+					parent.left = u;
+				}
+				else
+				{
+					parent.right = u;
+				}
+				v = null;
+				u.parent = parent;
+				if(uvBlack)
+				{
+					// u and v both black, fix double black at u
+					fixDoubleBlack(u);
+				}
+				else
+				{
+					// u or v red, color u black
+					u.color = Color.BLACK;
+				}
+			}
+			return;
+		}
+		// v has 2 children, swap values with successor and recurse
+		swapValues(u, v);
+		deleteNode(u);
+	}
+
+	void fixDoubleBlack(Node x) {
+		if(x==root)
+		{
+			// Reached root
+			return;
+		}
+		
+		Node sibling = x.sibling();
+		Node parent = x.parent;
+		
+		if(sibling==null)
+		{
+			// No sibiling, double black pushed up
+			fixDoubleBlack(parent);
+		}
+		else
+		{
+			if(sibling.color==Color.RED)
+			{
+				// Sibling red
+				parent.color = Color.RED;
+				sibling.color = Color.BLACK;
+				if(sibling.isOnLeft())
+				{
+					// left case
+					rotateRight(root, parent);
+				}
+				else
+				{
+					rotateLeft(root, parent);
+				}
+				fixDoubleBlack(x);
+			}
+			else
+			{
+				// Sibling black
+				if(sibling.hasRedChild())
+				{
+					// at least 1 red children
+					if(sibling.left!=null && sibling.left.color==Color.RED)
+					{
+						if(sibling.isOnLeft())
+						{
+							// left left
+							sibling.left.color = sibling.color;
+							sibling.color = parent.color;
+							rotateRight(root, parent);
+						}
+						else
+						{
+							// right left
+							sibling.left.color = parent.color;
+							rotateRight(root, sibling);
+							rotateLeft(root, parent);
+						}
+					}
+					else
+					{
+						if(sibling.isOnLeft())
+						{
+							// left right
+							sibling.right.color = parent.color;
+							rotateLeft(root, sibling);
+							rotateRight(root, parent);
+						}
+						else
+						{
+							// right right
+							sibling.right.color = sibling.color;
+							sibling.color = parent.color;
+							rotateLeft(root, parent);
+						}
+					}
+					parent.color = Color.BLACK;
+				}
+				else
+				{
+					// 2 black children
+					sibling.color = Color.RED;
+					if(parent.color==Color.BLACK)
+					{
+						fixDoubleBlack(parent);
+					}
+					else
+					{
+						parent.color = Color.BLACK;
+					}
+				}
+			}
+		}
+	}
+
+
+	// find node that replaces a deleted node in BST
+	private Node BSTreplace(Node x) {
+		// when node have 2 children
+		if(x.left!=null && x.right!=null)
+		{
+			return successor(x.right);
+		}
+		
+		// when leaf
+		if(x.left==null && x.right==null)
+		{
+			return null;
+		}
+		
+		// when single child
+		if(x.left!=null)
+		{
+			return x.left;
+		}
+		else
+		{
+			return x.right;
+		}
+	}
+
+
+	// searches for given value
+	// if ound returns the node (used for delete)
+	// else returns the last node while traversing (used in insert)
+	Node search(int n) {
+		Node temp = root;
+		while(temp!=null)
+		{
+			if(n < temp.data)
+			{
+				if(temp.left==null)
+				{
+					break;
+				}
+				else
+				{
+					temp = temp.left;
+				}
+			}
+			else if(n==temp.data)
+			{
+				break;
+			}
+			else
+			{
+				if(temp.right==null)
+				{
+					break;
+				}
+				else
+				{
+					temp=temp.right;
+				}
+			}
+		}
+		
+		return temp;
 	}
 	
 	
