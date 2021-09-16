@@ -1,6 +1,6 @@
-package Stack.practice.set1.array;
+package Stack.Implement;
 
-public class Stack {
+public class StackAsArray {
 	static final int MAX = 1000;
 	int top;
 	int a[] = new int[MAX];
@@ -9,7 +9,7 @@ public class Stack {
 	{
 		return (top<0);
 	}
-	Stack()
+	StackAsArray()
 	{
 		top = -1;
 	}

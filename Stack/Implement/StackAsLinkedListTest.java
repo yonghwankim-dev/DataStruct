@@ -1,8 +1,13 @@
-package Stack.practice.set1.linkedList;
+package Stack.Implement;
 
-public class Client {
+import static org.junit.jupiter.api.Assertions.*;
 
-	public static void main(String[] args) {
+import org.junit.jupiter.api.Test;
+
+class StackAsLinkedListTest {
+
+	@Test
+	void test() {
 		StackAsLinkedList sll = new StackAsLinkedList();
 		
 		sll.push(10);

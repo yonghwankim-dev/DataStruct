@@ -1,4 +1,4 @@
-package LinkedList.practice;
+package LinkedList.Implement;
 
 //연결리스트 삽입 메서드 예제
 public class LinkedList

@@ -1,4 +1,4 @@
-package Stack.practice.set1.linkedList;
+package Stack.Implement;
 
 public class StackAsLinkedList {
 	StackNode root;
