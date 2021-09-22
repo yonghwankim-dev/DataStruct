@@ -192,7 +192,7 @@ Geeks For Geeks
 Geeks For Geeks
 ```
 
-[##_Image|kage@baQUUi/btrfjVKbT00/9VJMDsJ1nU0BuARf8hbIuk/img.png|alignCenter|data-origin-width="702" data-origin-height="381" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/LinkedList/img/06_linkedList_cf_inheritance.png)
 
 위 그림에서 AbstractList, CopyOnWriteArrayList, AbstractSequentialList 클래스들은 List 인터페이스로부터 구현됨을 알수 있습니다.
 
