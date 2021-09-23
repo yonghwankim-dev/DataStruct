@@ -1,67 +1,97 @@
 package Tree.BT.Implement;
 
-class Node
+import java.util.LinkedList;
+import java.util.Queue;
+
+// 이진 트리 삽입 및 삭제 예제
+
+public class BinaryTree
 {
-    int key;
-    Node left, right;
- 
-    public Node(int item)
+    public static class Node
     {
-        key = item;
-        left = right = null;
+        int key;
+        Node left, right;
+     
+        public Node(int key)
+        {
+            this.key = key;
+            left = right = null;
+        }
     }
-}
- 
-// 이진트리를 소개하기 위한 예제
-class BinaryTree
-{
-    Node root;	// 루트 노드
- 
-    // 생성자
-    BinaryTree(int key)
-    {
-        root = new Node(key);
-    }
- 
- 	// 비어있는 트리
-    BinaryTree()
+    
+    Node root;
+    Node temp = root;
+    
+    // 비어있는 트리
+    public BinaryTree()
     {
         root = null;
     }
- 
-    public static void main(String[] args)
+    
+    // 생성자
+    public BinaryTree(int key)
     {
-        BinaryTree tree = new BinaryTree();
- 
-        // 루트 노드 생성
-        tree.root = new Node(1);
- 
-        /* 위의 명령문 이후 아래와 같이 트리 생성
- 
-              1
-            /   \
-          null  null     */
- 
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
- 
-        /* 1의 자식노드로 2, 3 노드 생성
-               1
-            /     \
-          2        3
-        /   \     /  \
-      null null null null  */
- 
- 
-        tree.root.left.left = new Node(4);
-        /* 4는 2의 왼쪽 자식 노드가 된다.
-                    1
-                /       \
-               2          3
-             /   \       /  \
-            4    null  null  null
-           /   \
-          null null
-         */
+        root = new Node(key);
     }
+    
+    // 이진 트리의 중위 순회
+    private void inorder(Node node)
+    {
+    	if(node==null)
+    	{
+    		return;
+    	}
+    	
+    	inorder(node.left);
+    	System.out.print(node.key+" ");
+    	inorder(node.right);
+    }
+    
+    // 이진 트리 중복순회 호출
+    public void inorderTraversal()
+    {
+    	inorder(this.root);
+    	System.out.println();
+    }
+    
+    // 이진 트리에 key값을 노드로 생성하여 삽입
+    public void insert(int key)
+    {
+    	if(root==null) 
+    	{
+    		root = new Node(key);
+    		return;
+    	}
+    	
+    	Queue<Node> q = new LinkedList<Node>();
+    	q.add(root);
+    	
+    	// 이진트리의 빈공간을 찾을때까지 level order 순회 수행
+    	while(!q.isEmpty()) {
+    		temp = q.peek();	// temp = q.remove();
+    		q.remove();
+    		
+    		if(temp.left==null)
+    		{
+    			temp.left = new Node(key);
+    			break;
+    		}
+    		else
+    		{
+    			q.add(temp.left);
+    		}
+    		
+    		if(temp.right==null)
+    		{
+    			temp.right = new Node(key);
+    			break;
+    		}
+    		else
+    		{
+    			q.add(temp.right);
+    		}
+    	}
+    	
+    }
+
 }
