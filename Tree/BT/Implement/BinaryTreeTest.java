@@ -1,9 +1,7 @@
 package Tree.BT.Implement;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-
 import Tree.BT.Implement.BinaryTree.Node;
 
 class BinaryTreeTest {
@@ -66,6 +64,28 @@ class BinaryTreeTest {
 		
 		System.out.print("삽입이후 중위 순회 : ");
 		bt.inorderTraversal();	// Expected Output : 9 11 15 10 8 7 12
+	}
+	
+	@Test
+	void deleteTest()
+	{
+		BinaryTree bt = new BinaryTree();
+		bt.insert(10);
+		bt.insert(11);
+		bt.insert(7);
+		bt.insert(9);
+		bt.insert(15);
+		bt.insert(8);
+		bt.insert(12);
+		
+		System.out.print("삭제 이전 중위 순회 : ");
+		bt.inorderTraversal();
+		
+		int key = 11;
+		bt.delete(key);
+		
+		System.out.print("삭제 이후 중위 순회 : ");
+		bt.inorderTraversal();
 	}
 
 }
