@@ -29,4 +29,7 @@
     6.  [이진 탐색 트리 탐색 및 삽입](https://github.com/yonghwankim-dev/DataStruct/blob/main/Tree/%236%20%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89%20%ED%8A%B8%EB%A6%AC%20%ED%83%90%EC%83%89%20%EB%B0%8F%20%EC%82%BD%EC%9E%85.md)
     7.  [이진 탐색 트리 삭제](https://github.com/yonghwankim-dev/DataStruct/blob/main/Tree/%237%20%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89%20%ED%8A%B8%EB%A6%AC%20%EC%82%AD%EC%A0%9C.md)
     8.  [TreeSet in Java](https://github.com/yonghwankim-dev/DataStruct/tree/main/Tree)
+
+-   힙(Heap)
+    1.  [이진 힙(Binary Heap) 소개](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C.md)
 -   그래프(Graph)
