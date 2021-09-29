@@ -32,4 +32,5 @@
 
 -   [힙(Heap)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Heap)
     1.  [이진 힙(Binary Heap) 소개](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C.md)
+    2.  [Priority Queue in Java](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/%232%20Priority%20Queue%20in%20Java.md)
 -   그래프(Graph)
