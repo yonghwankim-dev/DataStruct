@@ -20,7 +20,7 @@
 
 ### 비선형 데이터 구조
 
--   트리(Tree)
+-   [트리(Tree)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Tree)
     1.  [이진 트리의 소개](https://github.com/yonghwankim-dev/DataStruct/blob/main/Tree/%231%20%EC%9D%B4%EC%A7%84%20%ED%8A%B8%EB%A6%AC%EC%9D%98%20%EC%86%8C%EA%B0%9C.md)
     2.  [이진 트리의 특징](https://github.com/yonghwankim-dev/DataStruct/blob/main/Tree/%232%20%EC%9D%B4%EC%A7%84%20%ED%8A%B8%EB%A6%AC%EC%9D%98%20%ED%8A%B9%EC%A7%95.md)
     3.  [이진 트리의 종류](https://github.com/yonghwankim-dev/DataStruct/blob/main/Tree/%233%20%EC%9D%B4%EC%A7%84%20%ED%8A%B8%EB%A6%AC%EC%9D%98%20%EC%A2%85%EB%A5%98.md)
@@ -30,6 +30,6 @@
     7.  [이진 탐색 트리 삭제](https://github.com/yonghwankim-dev/DataStruct/blob/main/Tree/%237%20%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89%20%ED%8A%B8%EB%A6%AC%20%EC%82%AD%EC%A0%9C.md)
     8.  [TreeSet in Java](https://github.com/yonghwankim-dev/DataStruct/tree/main/Tree)
 
--   힙(Heap)
+-   [힙(Heap)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Heap)
     1.  [이진 힙(Binary Heap) 소개](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C.md)
 -   그래프(Graph)
