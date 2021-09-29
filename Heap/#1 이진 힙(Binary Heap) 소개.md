@@ -12,7 +12,7 @@
 
 최소 힙(Min Heap) 예제
 
-[##_Image|kage@bZ7nOM/btrgfNj5OyY/uoJkpbEmvEv8KKpk5IEkM0/img.png|alignCenter|data-origin-width="527" data-origin-height="426" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/01_binaryHeap.png)
 
 위의 그림을 보면 최소 힙을 구성하는 것을 볼 수 있습니다. 그중에서 루트 노드인 10 노드는 트리 중에서 가장 작은 값을 가지는 것을 알 수 있습니다.
 
@@ -30,7 +30,7 @@
 
 배열 기반의 접근에 사용되는 순회 방법은 **Level Order** 방법이 존재합니다.
 
-[##_Image|kage@bPUefg/btrghO38z28/CaWg1gXM0HSQnX8idiv2PK/img.png|alignCenter|data-origin-width="327" data-origin-height="389" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/02_HeapAccessing.png)
 
 ### 3\. 힙의 용도
 
@@ -42,25 +42,39 @@
 
 #### 4.1 최소 힙 삽입(Insert)
 
-[##_Image|kage@peF2C/btrgcA05iTM/AOKipV3D4K8XKnQ0ioEHHk/img.png|alignCenter|data-origin-width="861" data-origin-height="480" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@b55qd3/btrgcBTfVvu/sYMNhnlAJ70Oj32k1UXSE0/img.png|alignCenter|data-origin-width="1257" data-origin-height="632" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@cg2DPf/btrgfOxL8pI/fCO1ZaX75MW1X6sEM8joJk/img.png|alignCenter|data-origin-width="1018" data-origin-height="632" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@mjzAj/btrgjF0C0nH/en7bdyKYXHrMGhoom8ZxqK/img.png|alignCenter|data-origin-width="1018" data-origin-height="632" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@bVoKMg/btrgh9BqYyD/7knoVRayH4gNRKvHMt37uK/img.png|alignCenter|data-origin-width="953" data-origin-height="650" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/03_insert_01.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/03_insert_02.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/03_insert_03.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/03_insert_04.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/03_insert_05.png)
 
 #### 4.2 최소 힙 수정(Update)
 
-[##_Image|kage@bfgBWC/btrgnrgumwO/JDm04BLniBN9BScgRi5Ii0/img.png|alignCenter|data-origin-width="861" data-origin-height="473" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@zAAvK/btrghPpDgOY/LuNOQYCRhPsbODtm57Pkt0/img.png|alignCenter|data-origin-width="1235" data-origin-height="473" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@sPZlF/btrgnqolL0x/p6oXJugk7HnTBt23Q76AH1/img.png|alignCenter|data-origin-width="1239" data-origin-height="587" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@5oU7z/btrgil9r7iZ/sKk8EvKDSVHLYWuF0bCXUK/img.png|alignCenter|data-origin-width="884" data-origin-height="587" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/04_update_01.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/04_update_02.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/04_update_03.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/04_update_04.png)
 
 #### 4.3 최소 힙 추출(extract)
 
-[##_Image|kage@2I3Yw/btrgg3g0Y3b/KiXIKNiAT301sVmAKT2tnK/img.png|alignCenter|data-origin-width="1128" data-origin-height="587" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@N8rft/btrgfNey2zh/4N4RCzDprU8Z1t3HmiDsI1/img.png|alignCenter|data-origin-width="920" data-origin-height="587" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/05_extract_01.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/05_extract_02.png)
 
 위 그림을 보시면 루트 노드의 값이 70이기 때문에 최소 힙의 원칙이 위배됩니다. 따라서 MinHeapify(0)을 수행하여 최소 힙조정을 수행해야 합니다. 최소 힙조정에 대한 과정은 4.4 최소 힙 조정(heapify)에 있습니다.
 
 #### 4.4 최소 힙 조정(heapify)
 
-[##_Image|kage@cRefXQ/btrgimUShpN/VHpWU8Jan1c738MOaYtKqK/img.png|alignCenter|data-origin-width="925" data-origin-height="587" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@bzDR8M/btrghPiRyJi/mKq9K6tOTt9jHe6Z3q1ODK/img.png|alignCenter|data-origin-width="1071" data-origin-height="587" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@W8q0j/btrghQPB1Wn/mWzMtMKcKiTyXIUOYlrKKK/img.png|alignCenter|data-origin-width="1075" data-origin-height="587" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@QrHCF/btrgjGFf0pE/uPNyyq1tE5rBzRMpudE6I1/img.png|alignCenter|data-origin-width="861" data-origin-height="518" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/06_heapify_01.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/06_heapify_02.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/06_heapify_03.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/06_heapify_04.png)
 
 #### 4.5 최소 힙 삭제(Delete)
 
-[##_Image|kage@IN9bR/btrgbcsvoWL/7HD3HemEjhB7INNUwil9YK/img.png|alignCenter|data-origin-width="1264" data-origin-height="642" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@rLQL7/btrgbyB5CIF/7Q0ny7Ko045tHEyqvCRbJ0/img.png|alignCenter|data-origin-width="1179" data-origin-height="456" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@rmY1u/btrgfNZW3Il/ifDeL2GZjJU2ORjkfaIqP0/img.png|alignCenter|data-origin-width="1186" data-origin-height="456" data-ke-mobilestyle="widthOrigin"|||_##][##_Image|kage@c7qhXl/btrgbzA0irH/p9HTew4Gra6rCCaUGM0uH1/img.png|alignCenter|data-origin-width="1101" data-origin-height="456" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/07_delete_01.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/07_delete_02.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/07_delete_03.png)
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%231%20%EC%9D%B4%EC%A7%84%20%ED%9E%99(Binary%20Heap)%20%EC%86%8C%EA%B0%9C/07_delete_04.png)
 
 ### 5\. 최소 힙의 대표적인 연산
 
