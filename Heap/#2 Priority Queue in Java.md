@@ -4,11 +4,11 @@ Priority Queue는 객체들이 우선순위에 기반하여 처리될때 사용�
 
 Priority Queue의 데이터 구조는 힙(Heap) 데이터 구조에 기반합니다. 우선순위 큐의 정렬은 기본적으로 오름차순이지만 객체 생성시 Comparator 인터페이스를 통해서 정렬기준 및 순서를 정할 수 있습니다.
 
-[##_Image|kage@cqX6Uv/btrghPX6Ub1/alsO5zIyWLpvBeKtZBr4B1/img.png|alignCenter|data-origin-width="440" data-origin-height="376" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%232%20Priority%20Queue%20in%20Java/01_inheritance.png)
 
 아래 Priority Queue 예제에서 아스키 값이 클수록 우선순위가 높습니다.
 
-[##_Image|kage@yJeac/btrgg3hB5sI/xTw5edNMVzKgANTrtnQ4qk/img.png|alignCenter|data-origin-width="752" data-origin-height="377" data-ke-mobilestyle="widthOrigin"|||_##]
+![](https://github.com/yonghwankim-dev/DataStruct/blob/main/Heap/img/%232%20Priority%20Queue%20in%20Java/01_priorityqueue.png)
 
 ### 2\. Priority Queue 예제
 
