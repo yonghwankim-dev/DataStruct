@@ -3,6 +3,7 @@ package LinkedList.CollectionFramework;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -130,5 +131,17 @@ class LinkedListTest {
 	    System.out.println();
 	    
 	    printSeparateBar();
+	}
+	
+	@Test
+	void addTest1() {
+		List<Integer> list = new LinkedList<Integer>();
+		
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		
+		list.add(4, 4);
+		System.out.println(list);
 	}
 }
