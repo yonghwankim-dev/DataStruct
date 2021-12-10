@@ -10,9 +10,10 @@
 -   [연결리스트(LinkedList)](https://github.com/yonghwankim-dev/DataStruct/tree/main/LinkedList)
     1.  [단순 연결리스트](https://github.com/yonghwankim-dev/DataStruct/tree/main/LinkedList/Implement)
         1.  [연결리스트 소개](https://yonghwankim-dev.tistory.com/105?category=974118)
-        2.  [노드 삽입(Insert)](https://yonghwankim-dev.tistory.com/106?category=974118)
-        3.  [노드 삭제(Delete)](https://yonghwankim-dev.tistory.com/107?category=974118)
-        4.  [LinkedList Collection Framework (JAVA)](https://yonghwankim-dev.tistory.com/112?category=974118)
+        2.  [노드와 크기 및 경계조건](https://yonghwankim-dev.tistory.com/106?category=974118)
+        3.  [addFirst/addLast 메서드](https://yonghwankim-dev.tistory.com/107?category=974118)
+        4.  [removeFirst/removeLast 메서드](https://yonghwankim-dev.tistory.com/181?category=974118)
+        5.  [remove/find 메서드]()
     2.  원형 연결리스트
         1.  원형 연결리스트 소개
         2.  원형 연결리스트 삽입
