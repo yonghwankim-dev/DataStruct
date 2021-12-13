@@ -2,6 +2,9 @@ package LinkedList.Implement;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 class LinkedListTest {
@@ -60,6 +63,41 @@ class LinkedListTest {
 		list.addFirst("C");
 		
 		System.out.println(list.contains("B"));	// Expected Output : true
+	}
+	
+	@Test
+	void peekFirstTest() {
+		LinkedList<String> list = new LinkedList<String>();
+		
+		list.addFirst("A");
+		list.addFirst("B");
+		list.addFirst("C");
+		System.out.println(list.peekFirst());	// Expected Output : C
+	}
+	
+	@Test
+	void peekLastTest() {
+		LinkedList<String> list = new LinkedList<String>();
+		
+		list.addFirst("A");
+		list.addFirst("B");
+		list.addFirst("C");
+		System.out.println(list.peekLast());	// Expected Output : A
+	}
+	
+	@Test
+	void iteratorTest() {
+		LinkedList<String> list = new LinkedList<String>();
+		
+		list.addFirst("A");
+		list.addFirst("B");
+		list.addFirst("C");
+		
+		Iterator<String> itor = list.iterator(); 
+		while(itor.hasNext())
+		{
+			System.out.print(itor.next()+" ");	// Expected Output : C B A
+		}
 	}
 
 }
