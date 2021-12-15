@@ -3,28 +3,58 @@ package Heap.Implement;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class MinHeapTest {
 
 	@Test
-	void minHeapTest() {
-		MinHeap heap = new MinHeap(11);
+	void minHeapAddTest() {
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
 		
-		heap.insertKey(3);
-		heap.insertKey(2);
-		heap.deleteKey(1);	// value 3 Á¦°Å
-		heap.insertKey(15);
-		heap.insertKey(5);
-		heap.insertKey(4);
-		heap.insertKey(45);
+		heap.add(5);
+		heap.add(4);
+		heap.add(3);
+		heap.add(2);
+		heap.add(1);
 		
-		System.out.println(heap.extractMin()); // Expected Output : 2
-		System.out.println(heap.getMin());	// Expected Output : 4 
-		heap.decreaseKey(2, 1);				
-		System.out.println(heap.getMin());	// Expected Output : 1
-		System.out.println(heap);
+		heap.printHeap(); // Expected Output : 1 2 4 5 3
+	}
+	
+	@Test
+	void minHeapRemoveTest() {
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
+		
+		heap.add(5);
+		heap.add(4);
+		heap.add(3);
+		heap.add(2);
+		heap.add(1);
+		
+		// Expected Output : 1 2 3 4 5
+		System.out.print(heap.remove() + " ");	 
+		System.out.print(heap.remove() + " ");
+		System.out.print(heap.remove() + " ");
+		System.out.print(heap.remove() + " ");
+		System.out.print(heap.remove() + " ");
+		System.out.println();
+	}
+	
+	@Test
+	void minHeapSetTest() {
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
+		
+		heap.add(50);
+		heap.add(40);
+		heap.add(30);
+		heap.add(20);
+		heap.add(10);
+	
+		heap.printHeap(); // Expected Output : 10 20 40 50 30
+		heap.set(3, 5);
+		heap.printHeap(); // Expected Output : 5 10 40 20 30
 		
 	}
+	
 
 }
