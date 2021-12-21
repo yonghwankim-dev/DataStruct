@@ -43,16 +43,19 @@
         1.  [이진 트리의 소개](https://yonghwankim-dev.tistory.com/115?category=974118)
         2.  [이진 트리의 특징](https://yonghwankim-dev.tistory.com/117?category=974118)
         3.  [이진 트리의 종류](https://yonghwankim-dev.tistory.com/116?category=974118)
-        4.  [이진 트리의 삽입](https://yonghwankim-dev.tistory.com/118?category=974118)
-        5.  [이진 트리의 삭제](https://yonghwankim-dev.tistory.com/119?category=974118)
-        6.  [이진 탐색 트리 탐색 및 삽입](https://yonghwankim-dev.tistory.com/120?category=974118)
-        7.  [이진 탐색 트리 삭제](https://yonghwankim-dev.tistory.com/121?category=974118)
-        8.  [TreeSet in Java](https://yonghwankim-dev.tistory.com/122?category=974118)
-    2.  AVL 트리
-    3.  RB(Red-Black) 트리
+        4.  [이진 트리의 순회 및 표현](https://yonghwankim-dev.tistory.com/190)
+        5.  [이진 트리의 삽입](https://yonghwankim-dev.tistory.com/118?category=974118)
+        6.  [이진 트리의 삭제](https://yonghwankim-dev.tistory.com/119?category=974118)
+        7.  [TreeSet in Java](https://yonghwankim-dev.tistory.com/122?category=974118)
+    2.  [이진 탐색 트리](https://github.com/yonghwankim-dev/DataStruct/tree/main/Tree/BST)
+        1.  [이진 탐색 트리 탐색 및 삽입](https://yonghwankim-dev.tistory.com/120?category=974118)
+        2.  [이진 탐색 트리 삭제](https://yonghwankim-dev.tistory.com/121?category=974118)
+    4.  AVL 트리
+    5.  RB(Red-Black) 트리
 -   [힙(Heap)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Heap)
-    1.  [이진 힙(Binary Heap) 소개](https://yonghwankim-dev.tistory.com/123?category=974118)
-    2.  [Priority Queue in Java](https://yonghwankim-dev.tistory.com/124?category=974118)
+    1.  [이진 힙(Binary Heap) 소개](https://yonghwankim-dev.tistory.com/123)
+    2.  [이진 힙 정렬(Binary Heap Sort)]()
+    3.  [Priority Queue in Java](https://yonghwankim-dev.tistory.com/124)
 -   [해시(Hash)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Hash/Implements)
     1. [해시 소개](https://yonghwankim-dev.tistory.com/171?category=974118)
     2. [해시 함수에서 문자열](https://yonghwankim-dev.tistory.com/172?category=974118)
