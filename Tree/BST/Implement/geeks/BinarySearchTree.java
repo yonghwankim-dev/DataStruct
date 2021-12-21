@@ -1,4 +1,4 @@
-package Tree.BST.Implement;
+package Tree.BST.Implement.geeks;
 
 // 이진 탐색 트리의 탐색, 삽입, 삭제를 예제
 public class BinarySearchTree {

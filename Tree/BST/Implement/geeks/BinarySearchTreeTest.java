@@ -1,4 +1,4 @@
-package Tree.BST.Implement;
+package Tree.BST.Implement.geeks;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,7 +6,7 @@ import javax.swing.event.TreeExpansionEvent;
 
 import org.junit.jupiter.api.Test;
 
-import Tree.BST.Implement.BinarySearchTree.Node;
+import Tree.BST.Implement.geeks.BinarySearchTree.Node;
 
 
 
