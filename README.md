@@ -50,6 +50,7 @@
     2.  [이진 탐색 트리](https://github.com/yonghwankim-dev/DataStruct/tree/main/Tree/BST)
         1.  [이진 탐색 트리 탐색 및 삽입](https://yonghwankim-dev.tistory.com/120?category=974118)
         2.  [이진 탐색 트리 삭제](https://yonghwankim-dev.tistory.com/121?category=974118)
+        3.  [이진 탐색 트리 회전](https://yonghwankim-dev.tistory.com/197)
     4.  AVL 트리
     5.  RB(Red-Black) 트리
 -   [힙(Heap)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Heap)
