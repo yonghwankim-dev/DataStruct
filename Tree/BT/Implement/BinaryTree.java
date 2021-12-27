@@ -57,6 +57,7 @@ public class BinaryTree
     // 이진 트리에 key값을 노드로 생성하여 삽입
     public void insert(int key)
     {
+    	// 트리가 비었을 경우
     	if(root==null) 
     	{
     		root = new Node(key);

@@ -40,6 +40,7 @@ class MinHeapTest {
 		System.out.println();
 	}
 	
+	@Disabled
 	@Test
 	void minHeapSetTest() {
 		MinHeap<Integer> heap = new MinHeap<Integer>(5);
@@ -56,5 +57,21 @@ class MinHeapTest {
 		
 	}
 	
-
+	@Test
+	void minHeapSortTest() {
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
+		
+		heap.add(5);
+		heap.add(4);
+		heap.add(3);
+		heap.add(2);
+		heap.add(1);
+		
+		heap.printHeap(); // Expected Output : 1 2 4 5 3
+		
+		heap.sort();	// 최소힙의 오름차순 정렬
+		
+		heap.printHeap(); // Expected Output : 1 2 3 4 5
+			
+	}
 }
