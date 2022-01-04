@@ -57,6 +57,7 @@
     5.  [RB(Red-Black) 트리](https://github.com/yonghwankim-dev/DataStruct/tree/main/Tree/red_black_tree)
         1.  [RedBlackTree의 규칙 및 수행과정](https://yonghwankim-dev.tistory.com/202)
         2.  [add 메서드](https://yonghwankim-dev.tistory.com/204)
+        3.  [LeftRotate & LeftRightRotate 메서드](https://yonghwankim-dev.tistory.com/206)
 -   [힙(Heap)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Heap)
     1.  [이진 힙(Binary Heap) 소개](https://yonghwankim-dev.tistory.com/123)
     2.  [이진 힙 정렬(Binary Heap Sort)]()
