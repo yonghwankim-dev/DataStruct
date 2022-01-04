@@ -79,7 +79,7 @@ public class RedBlackTree<K, V> {
 			return;
 		}
 		// Red 노드가 2개가 연속으로 나오는 경우(레드 블랙 트리 규칙 위반)
-		if(!node.black && !!node.parent.black)
+		if(!node.black && !node.parent.black)
 		{
 			correctTree(node);
 		}
@@ -182,4 +182,141 @@ public class RedBlackTree<K, V> {
 			}
 		}
 	}
+
+	private void rightLeftRotate(Node<K, V> node) {
+		rightRotate(node.right);
+		leftRotate(node);
+	}
+
+	private void leftRightRotate(Node<K, V> node) {
+		leftRotate(node.left);
+		rightRotate(node);
+	}
+
+	private void rightRotate(Node<K, V> node) {
+		Node<K,V> temp = node.left;
+		node.left = temp.right;
+		
+		if(node.left!=null)
+		{
+			node.left.parent = node;
+			node.left.isLeftChild = true;
+		}
+		
+		// node가 루트인 경우
+		if(node.parent==null)
+		{
+			root = temp;
+			temp.parent = null;
+		}
+		// node가 루트가 아닌 경우
+		else
+		{
+			temp.parent = node.parent;
+			
+			if(node.isLeftChild)
+			{
+				temp.isLeftChild = true;
+				node.parent.left = temp;
+			}
+			else
+			{
+				temp.isLeftChild = false;
+				node.parent.right = temp;
+			}
+			
+			temp.right = node;
+			node.isLeftChild = false;
+			node.parent = temp;
+		}
+		
+	}
+
+	private void leftRotate(Node<K, V> node) {
+		Node<K,V> temp = node.right;
+		node.right = temp.left;
+		
+		// 부모 노드 node.right가 temp가 되면서 조부모 노드가 없어짐
+		if(node.right!=null)
+		{
+			node.right.parent = node;
+			node.right.isLeftChild = false;
+		}
+		
+		// node가 루트인 경우
+		if(node.parent==null)
+		{
+			root = temp;
+			temp.parent = null;
+		}
+		// node가 루트가 아닌 경우
+		else
+		{
+			temp.parent = node.parent;
+			
+			if(node.isLeftChild)
+			{
+				temp.isLeftChild = true;
+				node.parent.left = temp;	
+			}
+			else
+			{
+				temp.isLeftChild = false;
+				node.parent.right = temp;
+			}
+			temp.left = node;
+			node.isLeftChild = true;
+			node.parent = temp;
+		}
+		
+	}
+	
+	public int height() {
+		if(root==null)
+		{
+			return 0;
+		}
+		return height(root)-1;
+	}
+	private int height(Node<K,V> node){
+		if(node==null)
+		{
+			return 0;
+		}
+		int leftheight = height(node.left)+1;
+		int rightheight = height(node.right)+1;
+		
+		if(leftheight>rightheight)
+		{
+			return leftheight;
+		}
+		else
+		{
+			return rightheight;
+		}	
+	}
+	
+	public int blackNodes(Node<K,V> node){
+		// null 노드의 색상은 black
+		if(node==null)
+		{
+			return 1;
+		}
+		
+		int leftBlackNodes = blackNodes(node.left);
+		int rightBlackNodes = blackNodes(node.right);
+		
+		// 오른쪽과 왼쪽의 검은색 노드 개수가 다르면 에러
+		if(leftBlackNodes!=rightBlackNodes)
+		{
+			// throw an error
+			// or fix the tree
+		}
+		if(node.black)
+		{
+			leftBlackNodes++;
+		}
+		return leftBlackNodes;
+		
+	}	
 }
