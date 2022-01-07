@@ -77,8 +77,8 @@
 
 ### 정렬
 
-1.  선택 정렬
-2.  삽입 정렬
+[1.  선택 정렬(Selection Sort)](https://yonghwankim-dev.tistory.com/207)
+[2.  삽입 정렬(Insertion Sort)](https://yonghwankim-dev.tistory.com/208)
 3.  셀 정렬
 4.  합병 정렬
 5.  퀵 정렬
