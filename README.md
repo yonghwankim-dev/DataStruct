@@ -79,7 +79,7 @@
 
 [1.  선택 정렬(Selection Sort)](https://yonghwankim-dev.tistory.com/207)
 [2.  삽입 정렬(Insertion Sort)](https://yonghwankim-dev.tistory.com/208)
-3.  셀 정렬
-4.  합병 정렬
+[3.  셀 정렬](https://yonghwankim-dev.tistory.com/211)
+[4.  합병 정렬](https://yonghwankim-dev.tistory.com/212) 퇴고 필요
 5.  퀵 정렬
 6.  기수 정렬
