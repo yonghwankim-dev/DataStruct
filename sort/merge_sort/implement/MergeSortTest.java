@@ -10,7 +10,7 @@ class MergeSortTest {
 
 	@Test
 	void test() {
-		int[] arr = {32,27,43,3,9,82,10};
+		int[] arr = {8,7,6,5,4,3,2,1};
 		System.out.println(Arrays.toString(arr));
 		MergeSort.sort(arr, 0, arr.length-1);
 		System.out.println(Arrays.toString(arr));

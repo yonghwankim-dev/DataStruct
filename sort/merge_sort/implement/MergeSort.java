@@ -9,10 +9,14 @@ public class MergeSort {
 		int[] left_arr = new int[n1];
 		int[] right_arr = new int[n2];
 		
+		// n = n1 + n2
+		
+		// n1¹ø
 		for(int i=0; i<n1;i++)
 		{
 			left_arr[i] = arr[left+i];
 		}
+		// n2¹ø
 		for(int j=0; j<n2; j++)
 		{
 			right_arr[j] = arr[middle+1+j];
