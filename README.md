@@ -82,4 +82,4 @@
     3. [셀 정렬](https://yonghwankim-dev.tistory.com/211)
     4. [합병 정렬](https://yonghwankim-dev.tistory.com/212)
     5. [퀵 정렬](https://yonghwankim-dev.tistory.com/216)
-    6.  기수 정렬
+    6. [기수 정렬](https://yonghwankim-dev.tistory.com/220)
