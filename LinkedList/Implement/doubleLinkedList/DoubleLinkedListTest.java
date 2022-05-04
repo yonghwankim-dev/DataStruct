@@ -1,4 +1,4 @@
-package LinkedList.Implement.dll;
+package LinkedList.Implement.doubleLinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
 

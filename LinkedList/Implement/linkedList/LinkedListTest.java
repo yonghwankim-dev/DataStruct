@@ -1,4 +1,4 @@
-package LinkedList.Implement;
+package LinkedList.Implement.linkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
 

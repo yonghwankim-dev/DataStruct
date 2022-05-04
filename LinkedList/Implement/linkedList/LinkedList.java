@@ -1,19 +1,16 @@
-package LinkedList.Implement.dll;
+package LinkedList.Implement.linkedList;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import LinkedList.Implement.ListI;
-
-public class DoubleLinkedList<E> implements ListI<E>{
+public class LinkedList<E> implements ListI<E>{
 	class Node<E>{
 		E data;
 		Node<E> next;
-		Node<E> prev;
+		
 		public Node(E data) {
 			this.data = data;
 			this.next = null;
-			this.prev = null;
 		}	
 	}
 	
@@ -48,7 +45,7 @@ public class DoubleLinkedList<E> implements ListI<E>{
 	private Node<E> tail;
 	private int currentSize;
 	
-	public DoubleLinkedList(){
+	public LinkedList(){
 		head = null;
 		tail = null;
 		currentSize = 0;
@@ -63,13 +60,9 @@ public class DoubleLinkedList<E> implements ListI<E>{
 		{
 			tail = newNode;
 		}
-		else
-		{
-			head.prev = newNode;
-		}
 		
 		newNode.next = head;
-		head = newNode;
+		head = newNode;		
 		currentSize++;
 	}
 	
@@ -83,10 +76,6 @@ public class DoubleLinkedList<E> implements ListI<E>{
 			head = tail = newNode;
 			currentSize++;
 			return;
-		}
-		else
-		{
-			newNode.prev = tail;
 		}
 		
 		tail.next = newNode;		
@@ -114,7 +103,6 @@ public class DoubleLinkedList<E> implements ListI<E>{
 		else
 		{
 			head = head.next;
-			head.prev = null;
 		}
 		
 		currentSize--;
@@ -136,13 +124,21 @@ public class DoubleLinkedList<E> implements ListI<E>{
 			return removeFirst();
 		}
 		
-		E delVal = tail.data;
-		tail.prev.next = null;
-		tail = tail.prev;
+		Node<E> current = head;
+		Node<E> previous = null;
+		
+		while(current!=tail)
+		{
+			previous = current;
+			current = current.next;		 
+		}
+		
+		previous.next = null;
+		tail = previous;
 		
 		currentSize--;
 		
-		return delVal;
+		return current.data;
 		
 	}
 	
@@ -167,10 +163,7 @@ public class DoubleLinkedList<E> implements ListI<E>{
 				{
 					return removeLast();
 				}
-				
 				previous.next = current.next;	// remove
-				current.next.prev = previous;
-				
 				currentSize--;
 				return current.data;
 			}

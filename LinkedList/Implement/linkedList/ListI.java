@@ -1,4 +1,4 @@
-package LinkedList.Implement;
+package LinkedList.Implement.linkedList;
 
 public interface ListI<E> {
 	public void addFirst(E obj);
