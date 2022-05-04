@@ -13,12 +13,10 @@
         2.  [노드와 크기 및 경계조건](https://yonghwankim-dev.tistory.com/106?category=974118)
         3.  [addFirst/addLast 메서드](https://yonghwankim-dev.tistory.com/107?category=974118)
         4.  [removeFirst/removeLast 메서드](https://yonghwankim-dev.tistory.com/181?category=974118)
-        5.  [remove/find 메서드]()
-    2.  원형 연결리스트
-        1.  원형 연결리스트 소개
-        2.  원형 연결리스트 삽입
-        3.  원형 연결리스트 삭제
-    3.  양방향 연결리스트
+        5.  [remove/find 메서드](https://yonghwankim-dev.tistory.com/182)
+    2.  [원형 연결리스트](https://github.com/yonghwankim-dev/DataStruct/tree/main/LinkedList/Implement/circularList)
+        1.  [원형 연결리스트(Circular LinkedList)](https://yonghwankim-dev.tistory.com/363)
+    4.  양방향 연결리스트
         1.  양방향 연결리스트 소개
         2.  양방향 연결리스트 삽입
         3.  양방향 연결리스트 삭제
