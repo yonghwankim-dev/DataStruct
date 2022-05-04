@@ -16,10 +16,10 @@
         5.  [remove/find 메서드](https://yonghwankim-dev.tistory.com/182)
     2.  [원형 연결리스트](https://github.com/yonghwankim-dev/DataStruct/tree/main/LinkedList/Implement/circularList)
         1.  [원형 연결리스트(Circular LinkedList)](https://yonghwankim-dev.tistory.com/363)
-    4.  양방향 연결리스트
-        1.  양방향 연결리스트 소개
-        2.  양방향 연결리스트 삽입
-        3.  양방향 연결리스트 삭제
+    4.  [양방향 연결리스트](https://github.com/yonghwankim-dev/DataStruct/tree/main/LinkedList/Implement/doubleLinkedList)
+        1.  [이중 연결리스트(Doubly LinkedList)](https://yonghwankim-dev.tistory.com/185)
+
+
 -   [스택(Stack)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Stack)
     1.  [스택 구조 소개](https://yonghwankim-dev.tistory.com/108?category=974118)
     2.  스택의 배열 기반 구현
