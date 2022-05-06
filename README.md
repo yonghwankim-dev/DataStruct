@@ -13,28 +13,22 @@
         2.  [노드와 크기 및 경계조건](https://yonghwankim-dev.tistory.com/106?category=974118)
         3.  [addFirst/addLast 메서드](https://yonghwankim-dev.tistory.com/107?category=974118)
         4.  [removeFirst/removeLast 메서드](https://yonghwankim-dev.tistory.com/181?category=974118)
-        5.  [remove/find 메서드]()
-    2.  원형 연결리스트
-        1.  원형 연결리스트 소개
-        2.  원형 연결리스트 삽입
-        3.  원형 연결리스트 삭제
-    3.  양방향 연결리스트
-        1.  양방향 연결리스트 소개
-        2.  양방향 연결리스트 삽입
-        3.  양방향 연결리스트 삭제
+        5.  [remove/find 메서드](https://yonghwankim-dev.tistory.com/182)
+    2.  [원형 연결리스트](https://github.com/yonghwankim-dev/DataStruct/tree/main/LinkedList/Implement/circularList)
+        1.  [원형 연결리스트(Circular LinkedList)](https://yonghwankim-dev.tistory.com/363)
+    4.  [양방향 연결리스트](https://github.com/yonghwankim-dev/DataStruct/tree/main/LinkedList/Implement/doubleLinkedList)
+        1.  [이중 연결리스트(Doubly LinkedList)](https://yonghwankim-dev.tistory.com/185)
+
+
 -   [스택(Stack)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Stack)
     1.  [스택 구조 소개](https://yonghwankim-dev.tistory.com/108?category=974118)
-    2.  스택의 배열 기반 구현
-    3.  스택의 연결리스트 기반 구현
-    4.  계산기 프로그램 구현
-    5.  [Stack Collection Framework (JAVA)](https://yonghwankim-dev.tistory.com/109?category=974118)
+    2.  [Stack Collection Framework (JAVA)](https://yonghwankim-dev.tistory.com/109?category=974118)
+    3.  [배열과 연결리스트 기반 스택 구현](https://yonghwankim-dev.tistory.com/366)
+
 -   [큐(Queue)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Queue)
     1.  [큐 구조 소개](https://yonghwankim-dev.tistory.com/110?category=974118)
-    2.  큐의 배열 기반 구현
-    3.  큐의 연결리스트 기반 구현
-    4.  큐의 활용
-    5.  덱(Deque)의 이해와 구현
-    6.  [Queue Collection Framework (JAVA)](https://yonghwankim-dev.tistory.com/111?category=974118)
+    2.  [Queue Collection Framework (JAVA)](https://yonghwankim-dev.tistory.com/111?category=974118)
+    3.  [배열/연결리스트 기반 큐 구현](https://yonghwankim-dev.tistory.com/367)
 
 ### 비선형 데이터 구조
 
