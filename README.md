@@ -27,9 +27,8 @@
 
 -   [큐(Queue)](https://github.com/yonghwankim-dev/DataStruct/tree/main/Queue)
     1.  [큐 구조 소개](https://yonghwankim-dev.tistory.com/110?category=974118)
-    2.  큐의 배열 기반 구현
-    3.  큐의 연결리스트 기반 구현
-    4.  [Queue Collection Framework (JAVA)](https://yonghwankim-dev.tistory.com/111?category=974118)
+    2.  [Queue Collection Framework (JAVA)](https://yonghwankim-dev.tistory.com/111?category=974118)
+    3.  [배열/연결리스트 기반 큐 구현](https://yonghwankim-dev.tistory.com/367)
 
 ### 비선형 데이터 구조
 
