@@ -1,11 +1,10 @@
 package LinkedList.Implement.doubleLinkedList;
 
 import java.util.Iterator;
+
 import java.util.NoSuchElementException;
 
-import LinkedList.Implement.linkedList.ListI;
-
-public class DoubleLinkedList<E> implements ListI<E>{
+public class DoubleLinkedList2<E> implements ListI<E>{
 	class Node<E>{
 		E data;
 		Node<E> next;
@@ -46,12 +45,12 @@ public class DoubleLinkedList<E> implements ListI<E>{
 	
 	private Node<E> head;
 	private Node<E> tail;
-	private int currentSize;
+	private int numofData;
 	
-	public DoubleLinkedList(){
+	public DoubleLinkedList2(){
 		head = null;
 		tail = null;
-		currentSize = 0;
+		numofData = 0;
 	}
 	
 	@Override
@@ -70,7 +69,7 @@ public class DoubleLinkedList<E> implements ListI<E>{
 		
 		newNode.next = head;
 		head = newNode;
-		currentSize++;
+		numofData++;
 	}
 	
 	@Override
@@ -81,7 +80,7 @@ public class DoubleLinkedList<E> implements ListI<E>{
 		if(head==null)
 		{
 			head = tail = newNode;
-			currentSize++;
+			numofData++;
 			return;
 		}
 		else
@@ -92,7 +91,7 @@ public class DoubleLinkedList<E> implements ListI<E>{
 		tail.next = newNode;		
 		tail = newNode;
 		
-		currentSize++;
+		numofData++;
 	}
 	
 	@Override
@@ -117,7 +116,7 @@ public class DoubleLinkedList<E> implements ListI<E>{
 			head.prev = null;
 		}
 		
-		currentSize--;
+		numofData--;
 		
 		return delData;
 	}
@@ -140,7 +139,7 @@ public class DoubleLinkedList<E> implements ListI<E>{
 		tail.prev.next = null;
 		tail = tail.prev;
 		
-		currentSize--;
+		numofData--;
 		
 		return delVal;
 		
@@ -171,7 +170,7 @@ public class DoubleLinkedList<E> implements ListI<E>{
 				previous.next = current.next;	// remove
 				current.next.prev = previous;
 				
-				currentSize--;
+				numofData--;
 				return current.data;
 			}
 			// 찾고자 하는 요소가 아닌 경우
