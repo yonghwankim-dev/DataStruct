@@ -1,9 +1,11 @@
 package Tree.BST.CollectionFramework;
 
+import org.junit.Test;
+
 import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeSet;
-import org.junit.jupiter.api.Test;
+
 
 class TreeSetTest {
 
@@ -11,16 +13,16 @@ class TreeSetTest {
 	void createAndAddTest() {
 		Set<String> ts1 = new TreeSet<String>();
 		
-		// ¿ä¼Ò Ãß°¡
+		// ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 		ts1.add("A");
 		ts1.add("B");
 		ts1.add("C");
 		
 		
-		// Áßº¹µÈ °ªÀº µé¾î°¥ ¼ö ¾øÀ½
+		// ï¿½ßºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¥ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		ts1.add("C");
 		
-		// ±âº» Á¤·Ä : ¿À¸§Â÷¼ø
+		// ï¿½âº» ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		System.out.println(ts1);	// Expected Output : [A, B, C]
 	}
 	
@@ -42,9 +44,9 @@ class TreeSetTest {
 		
 		String val = "Geek";
 		
-		// ÁÖ¾îÁø ¹®ÀÚ¿­º¸´Ù Å« ¹®ÀÚ¿­À» Å½»öÇÑ´Ù. 
+		// ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½Ñ´ï¿½. 
 		System.out.println("Higher " + ts.higher(val));	// Expected Output : Geeks
-		// ÁÖ¾îÁø ¹®ÀÚ¿­º¸´Ù ÀÛÀº ¹®ÀÚ¿­À» Å½»öÇÑ´Ù.. 
+		// ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½Ñ´ï¿½.. 
 		System.out.println("Lower " + ts.lower(val));	// Expected Output : For
 	}
 	
@@ -59,25 +61,25 @@ class TreeSetTest {
         ts.add("B");
         ts.add("Z");
         
-        // ÃÊ±â Æ®¸® »óÈ²
+        // ï¿½Ê±ï¿½ Æ®ï¿½ï¿½ ï¿½ï¿½È²
         System.out.println("Initial TreeSet " + ts); // Expected Output : [A, B, For, Geek, Geeks, Z] 
         
-        // Æ®¸®¿¡¼­ "B" Á¦°Å
+        // Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ "B" ï¿½ï¿½ï¿½ï¿½
         ts.remove("B");
         
-        // B Á¦°Å ÈÄ Æ®¸® »óÈ²
+        // B ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Æ®ï¿½ï¿½ ï¿½ï¿½È²
         System.out.println("After removing element " + ts); // Expected Output : [A, For, Geek, Geeks, Z]
         
-        // Æ®¸®¿¡¼­ Ã¹¹øÂ° ³ëµå Á¦°Å
+        // Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         ts.pollFirst();
         
-        // Ã¹¹øÂ° ³ëµå Á¦°Å ÈÄ Æ®¸® »óÈ²
+        // Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Æ®ï¿½ï¿½ ï¿½ï¿½È²
         System.out.println("After removing first" + ts); // Expected Output : [For, Geek, Geeks, Z]
         
-        // Æ®¸®¿¡¼­ ¸¶Áö¸· ³ëµå Á¦°Å
+        // Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         ts.pollLast();
         
-        // ¸¶Áö¸· ³ëµå Á¦°Å ÈÄ Æ®¸® »óÈ²
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Æ®ï¿½ï¿½ ï¿½ï¿½È²
         System.out.println("After removing last" + ts); // Expected Output : [For, Geek, Geeks]
 	}
 	
@@ -99,7 +101,7 @@ class TreeSetTest {
         System.out.println();
 	}
 	
-	// Æ®¸®¿¡ ´Ù¸¥ Å¸ÀÔÀÇ °ªÀÌ µé¾î¿Â °æ¿ì »ðÀÔÀ» Çã¿ëÇÏÁö ¾Ê´Â´Ù.
+	// Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
 	@Test
 	void heterogeneousTest() {
 		Set<StringBuffer> ts = new TreeSet<>();

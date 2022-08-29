@@ -1,17 +1,17 @@
 package Queue.Implement;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 import org.junit.Assert;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-class QueueAsLinkedListTest {
+public class QueueAsLinkedListTest {
 	// enqueue, dequeue, isempty, front, rear
 	
 	private QueueAsLinkedList queue;
 	
-	@BeforeEach
+	@Before
 	void setup() {
 		queue = new QueueAsLinkedList();
 	}

@@ -1,22 +1,24 @@
 package Stack.CollectionFramework;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+
+import org.junit.Test;
 
 import java.util.Stack;
 
-import org.junit.jupiter.api.Test;
+
 
 class StackExampleTest {
 
 	@Test
 	void pushTest() {
-		// ½ºÅÃ ÃÊ±âÈ­
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         Stack stack1 = new Stack();
  
-        // Á¦³Ê¸¯(Generics)À» È°¿ëÇÑ ½ºÅÃÀÇ ÃÊ±âÈ­
+        // ï¿½ï¿½ï¿½Ê¸ï¿½(Generics)ï¿½ï¿½ È°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         Stack<String> stack2 = new Stack<String>();
  
-        // ¿ä¼Ò Ãß°¡
+        // ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
         stack1.push(4);
         stack1.push("All");
         stack1.push("Geeks");
@@ -35,7 +37,7 @@ class StackExampleTest {
 	void peekTest() {
 		Stack<String> stack = new Stack<String>();
 		 
- 		// µ¥ÀÌÅÍ Ãß°¡
+ 		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
         stack.push("Welcome");
         stack.push("To");
         stack.push("Geeks");
@@ -44,14 +46,14 @@ class StackExampleTest {
  
         
         System.out.println("peekTest");
-        // ÃÊ±â ½ºÅÃ Ãâ·Â
+        // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         System.out.println("Initial Stack: " + stack);	// Expected Output : [Welcome, To, Geeks, For, Geeks]
  
-        // ½ºÅÃÀÇ ²À´ë±â µ¥ÀÌÅÍ ÂüÁ¶
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         System.out.println("The element at the top of the"
                            + " stack is: " + stack.peek());	// Expected Output : Geeks
  
-        // peek ¸Þ¼Òµå ÀÌÈÄÀÇ ½ºÅÃ »óÅÂ Ãâ·Â => º¯È­ ¾øÀ½
+        // peek ï¿½Þ¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ => ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½
         System.out.println("Final Stack: " + stack);	// Expected Output : [Welcome, To, Geeks, For, Geeks]
         
         System.out.println("----------------------------------------------\n");
@@ -72,13 +74,13 @@ class StackExampleTest {
         System.out.println("popTest");
         System.out.println("Initial Stack: " + stack); // Expected Output : 10 15 30 20 5
  
-		// Stack Å¬·¡½ºÀÇ pop ¸Þ¼­µå ¼öÇà
+		// Stack Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ pop ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         System.out.println("Popped element: "
                            + stack.pop());	// Expected Output : 5
         System.out.println("Popped element: "
                            + stack.pop());	// Expected Output : 20
  
-		// pop ¸Þ¼­µå ¼öÇà ÀÌÈÄ ½ºÅÃÀÇ »óÅÂ Ãâ·Â
+		// pop ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         System.out.println("Stack after pop operation "
                            + stack);	// Expected Output : [10, 15, 30]
         System.out.println("----------------------------------------------\n");

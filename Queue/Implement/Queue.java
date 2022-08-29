@@ -14,19 +14,19 @@ public class Queue {
 		array = new int[this.capacity];
 	}
 
- // 큐가 가득찼는지 검사
+	// 큐가 가득찼는지 검사
 	boolean isFull(Queue queue)
 	{
 		return (queue.size == queue.capacity);
 	}
 
- // 큐가 비어있는지 검사
+	// 큐가 비어있는지 검사
 	boolean isEmpty(Queue queue)
 	{
 		return (queue.size == 0);
 	}
 
- // 큐에 데이터를 삽입 (rear와 size 값이 변경됨)
+	// 큐에 데이터를 삽입 (rear와 size 값이 변경됨)
 	void enqueue(int item)
 	{
 		if (isFull(this))
@@ -39,7 +39,7 @@ public class Queue {
 						+ " enqueued to queue");
 	}
 
- // 큐에 데이터를 제거 및 반환(front와 size 값이 변경됨)
+	// 큐에 데이터를 제거 및 반환(front와 size 값이 변경됨)
 	int dequeue()
 	{
 		if (isEmpty(this))
@@ -52,7 +52,7 @@ public class Queue {
 		return item;
 	}
 
- // 큐의 제일 앞쪽 데이터 반환
+	// 큐의 제일 앞쪽 데이터 반환
 	int front()
 	{
 		if (isEmpty(this))
@@ -61,7 +61,7 @@ public class Queue {
 		return this.array[this.front];
 	}
 
- // 큐의 제일 뒤쪽 데이터 반환
+	// 큐의 제일 뒤쪽 데이터 반환
 	int rear()
 	{
 		if (isEmpty(this))

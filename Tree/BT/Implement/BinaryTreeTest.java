@@ -1,20 +1,21 @@
 package Tree.BT.Implement;
 
 
-import org.junit.jupiter.api.Test;
+
 import Tree.BT.Implement.BinaryTree.Node;
+import org.junit.Test;
 
 class BinaryTreeTest {
 
-	// ÀÌÁøÆ®¸® »ý¼º Å×½ºÆ®
+	// ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ®
 	@Test
 	void createTest() {
 		BinaryTree tree = new BinaryTree();
 		 
-        // ·çÆ® ³ëµå »ý¼º
+        // ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         tree.root = new Node(1);
  
-        /* À§ÀÇ ¸í·É¹® ÀÌÈÄ ¾Æ·¡¿Í °°ÀÌ Æ®¸® »ý¼º
+        /* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  
               1
             /   \
@@ -23,7 +24,7 @@ class BinaryTreeTest {
         tree.root.left = new Node(2);
         tree.root.right = new Node(3);
  
-        /* 1ÀÇ ÀÚ½Ä³ëµå·Î 2, 3 ³ëµå »ý¼º
+        /* 1ï¿½ï¿½ ï¿½Ú½Ä³ï¿½ï¿½ï¿½ 2, 3 ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                1
             /     \
           2        3
@@ -32,7 +33,7 @@ class BinaryTreeTest {
  
  
         tree.root.left.left = new Node(4);
-        /* 4´Â 2ÀÇ ¿ÞÂÊ ÀÚ½Ä ³ëµå°¡ µÈ´Ù.
+        /* 4ï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½å°¡ ï¿½È´ï¿½.
                     1
                 /       \
                2          3
@@ -41,7 +42,7 @@ class BinaryTreeTest {
            /   \
           null null
          */
-        System.out.print("ÀÌÁø Æ®¸® ÃÊ±â ¼³Á¤ : ");
+        System.out.print("ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ : ");
         tree.inorderTraversal(); // Expected Output : 4 2 1 3
 	}
 	
@@ -56,13 +57,13 @@ class BinaryTreeTest {
 		bt.insert(15);
 		bt.insert(8);
 		
-		System.out.print("»ðÀÔÀÌÀü ÁßÀ§ ¼øÈ¸ : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ : ");
 		bt.inorderTraversal();	// Expected Output : 9 11 15 10 8 7
 		
 		int key = 12;
 		bt.insert(key);
 		
-		System.out.print("»ðÀÔÀÌÈÄ ÁßÀ§ ¼øÈ¸ : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ : ");
 		bt.inorderTraversal();	// Expected Output : 9 11 15 10 8 7 12
 	}
 	
@@ -78,13 +79,13 @@ class BinaryTreeTest {
 		bt.insert(8);
 		bt.insert(12);
 		
-		System.out.print("»èÁ¦ ÀÌÀü ÁßÀ§ ¼øÈ¸ : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ : ");
 		bt.inorderTraversal();
 		
 		int key = 11;
 		bt.delete(key);
 		
-		System.out.print("»èÁ¦ ÀÌÈÄ ÁßÀ§ ¼øÈ¸ : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ : ");
 		bt.inorderTraversal();
 	}
 

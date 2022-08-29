@@ -1,10 +1,10 @@
 package LinkedList.Implement.circularList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
-import org.junit.jupiter.api.Test;
 
-class CircularListTest {
+
+public class CircularListTest {
 
 	@Test
 	void pushTest() {

@@ -1,13 +1,12 @@
 package LinkedList.Implement.linkedList;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+
+import org.junit.Test;
 
 import java.util.Iterator;
-import java.util.List;
 
-import org.junit.jupiter.api.Test;
-
-class LinkedListTest {
+public class LinkedListTest {
 
 	@Test
 	void addFirstTest() {

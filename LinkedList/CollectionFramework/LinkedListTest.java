@@ -1,15 +1,13 @@
 package LinkedList.CollectionFramework;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.Test;
-
-class LinkedListTest {
+public class LinkedListTest {
 
 	@Before
 	void printTestName(String title)
@@ -23,7 +21,7 @@ class LinkedListTest {
 		System.out.println("---------------------------------------------\n");
 	}
 	
-	@Test()
+	@Test
 	void createAndUsingLinkedListTest() {
 		printTestName(new Object() {}.getClass().getEnclosingMethod().getName());
 		
@@ -117,7 +115,7 @@ class LinkedListTest {
 	    ll.add("Geeks"); 
 	    ll.add(1, "For"); 
 	
-	    // ¹Ýº¹¹®¿¡¼­ get¸Þ¼­µå¸¦ ÅëÇÏ¿© ¼øÈ¸
+	    // ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ getï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½È¸
 	    for (int i = 0; i < ll.size(); i++) { 
 	
 	        System.out.print(ll.get(i) + " "); // Expected Output : Geeks For Geeks
@@ -125,7 +123,7 @@ class LinkedListTest {
 	
 	    System.out.println(); 
 	
-	    // °¢ ·çÇÁ¿¡ ´ëÇØ¼­  »ç¿ë
+	    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½  ï¿½ï¿½ï¿½
 	    for (String str : ll) 
 	        System.out.print(str + " "); 		// Expected Output : Geeks For Geeks
 	    System.out.println();

@@ -1,10 +1,7 @@
 package Heap.Implement;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 class MinHeapTest {
 
@@ -39,8 +36,7 @@ class MinHeapTest {
 		System.out.print(heap.remove() + " ");
 		System.out.println();
 	}
-	
-	@Disabled
+
 	@Test
 	void minHeapSetTest() {
 		MinHeap<Integer> heap = new MinHeap<Integer>(5);

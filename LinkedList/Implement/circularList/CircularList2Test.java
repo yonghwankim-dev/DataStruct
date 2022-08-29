@@ -1,14 +1,8 @@
 package LinkedList.Implement.circularList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
-import java.util.List;
-
-import org.junit.jupiter.api.Test;
-
-import LinkedList.Implement.linkedList.LinkedList;
-
-class CircularList2Test {
+public class CircularList2Test {
 
 	@Test
 	void pushTest() {

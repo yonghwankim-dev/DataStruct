@@ -208,7 +208,7 @@ public class ArrayList_imple {
 ### 배열을 이용한 리스트 구현 테스트
 
 ```
-import org.junit.jupiter.api.Test;
+
 
 class ArrayList_impleTest {
 

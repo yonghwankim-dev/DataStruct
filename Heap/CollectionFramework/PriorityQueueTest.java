@@ -1,8 +1,9 @@
 package Heap.CollectionFramework;
 
+import org.junit.Test;
+
 import java.util.Iterator;
 import java.util.PriorityQueue;
-import org.junit.jupiter.api.Test;
 
 class PriorityQueueTest {
 

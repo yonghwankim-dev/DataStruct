@@ -1,10 +1,12 @@
 package sort.merge_sort.implement;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+
+import org.junit.Test;
 
 import java.util.Arrays;
 
-import org.junit.jupiter.api.Test;
+
 
 class MergeSortTest {
 

@@ -1,10 +1,9 @@
 package Queue.Implement;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class QueueTest {
+public class QueueTest {
 
 	@Test
 	void testQueue() {

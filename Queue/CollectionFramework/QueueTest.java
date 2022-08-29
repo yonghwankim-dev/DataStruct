@@ -1,6 +1,8 @@
 package Queue.CollectionFramework;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+
+import org.junit.Test;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -8,9 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.concurrent.PriorityBlockingQueue;
 
-import org.junit.jupiter.api.Test;
-
-class QueueTest {
+public class QueueTest {
 
 	@Test
 	void createQueueTest() {
@@ -19,27 +19,27 @@ class QueueTest {
 		Queue<Integer> q
         = new LinkedList<>();
 
-	    // {0, 1, 2, 3, 4} µ¥ÀÌÅÍ¸¦ queue¿¡ Ãß°¡
+	    // {0, 1, 2, 3, 4} ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ queueï¿½ï¿½ ï¿½ß°ï¿½
 	    for (int i = 0; i < 5; i++)
 	        q.add(i);
 	
-	    // Å¥ÀÇ »óÅÂ Ãâ·Â
+	    // Å¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	    System.out.println("Elements of queue "
 	                       + q);	// Expected Output : [0, 1, 2, 3, 4]
 	
-	    // QueueÀÇ Á¦ÀÏ ¾ÕÂÊ µ¥ÀÌÅÍ Á¦°Å
+	    // Queueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	    int removedele = q.remove();
 	    System.out.println("removed element-"
 	                       + removedele);	// Expected Output : 0
 	
 	    System.out.println(q);	// Expected Output : [1, 2, 3, 4]
 	
-	    // QueueÀÇ Á¦ÀÏ ¾ÕÂÊ µ¥ÀÌÅÍ È®ÀÎ
+	    // Queueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 	    int head = q.peek();
 	    System.out.println("head of queue-"
 	                       + head);	// Expected Output : 1
 	
-		// QueueÀÇ »çÀÌÁî È®ÀÎ
+		// Queueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 	    int size = q.size();
 	    System.out.println("Size of queue-"
 	                       + size);	// Expected Output : 4
@@ -105,22 +105,22 @@ class QueueTest {
 	void priorityQueueClassTest()
 	{
 		System.out.println("priorityQueueClassTest");
-		// PriorityQueue °´Ã¼ »ý¼º
+		// PriorityQueue ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
         Queue<Integer> pQueue
             = new PriorityQueue<Integer>();
   
-        // µ¥ÀÌÅÍ Ãß°¡
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
         pQueue.add(10);
         pQueue.add(20);
         pQueue.add(15);
 
-        // PriorityQueueÀÇ Á¦ÀÏ ÀÏ¼øÀ§ ¿ä¼Ò¸¦ Ãâ·ÂÇÑ´Ù.
+        // PriorityQueueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¼ï¿½ï¿½ï¿½ ï¿½ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
         System.out.println(pQueue.peek());	// Expected Output : 10
   
-        // PriorityQueueÀÇ Á¦ÀÏ ÀÏ¼øÀ§ ¿ä¼Ò¸¦ Á¦°ÅÇÏ°í ¹ÝÈ¯ÇÑ´Ù.
+        // PriorityQueueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¼ï¿½ï¿½ï¿½ ï¿½ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½.
         System.out.println(pQueue.poll());	// Expected Output : 10
   
-        // PriorityQueueÀÇ ´Ù½Ã ÀÏ¼øÀ§ ¿ä¼Ò¸¦ Ãâ·ÂÇÑ´Ù.
+        // PriorityQueueï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½Ï¼ï¿½ï¿½ï¿½ ï¿½ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
         System.out.println(pQueue.peek());	// Expected Output : 15
 		System.out.println("----------------------------------------------\n");
 	}
@@ -129,7 +129,7 @@ class QueueTest {
 	void linkedListClassTest()
 	{
 		System.out.println("linkedListClassTest");
-		// LinkedList ±â¹Ý Å¥ °´Ã¼ »ý¼º
+		// LinkedList ï¿½ï¿½ï¿½ Å¥ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
         Queue<Integer> ll
             = new LinkedList<Integer>();
   
@@ -137,13 +137,13 @@ class QueueTest {
         ll.add(20);
         ll.add(15);
   
-		// Å¥ÀÇ Á¦ÀÏ ¾Õ¿¡ ÀÖ´Â °ªÀ» Ãâ·ÂÇÑ´Ù.
+		// Å¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
         System.out.println(ll.peek());	// Expected Output : 10
   
-        // Å¥ÀÇ Á¦ÀÏ ¾Õ¿¡ ÀÖ´Â °ªÀ» Á¦°ÅÇÏ°í ¹ÝÈ¯ÇÑ´Ù.
+        // Å¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½.
         System.out.println(ll.poll());	// Expected Output : 10
   
-        // ´Ù½Ã Å¥ÀÇ Á¦ÀÏ ¾Õ¿¡ ÀÖ´Â °ªÀ» Ãâ·ÂÇÑ´Ù.
+        // ï¿½Ù½ï¿½ Å¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
         System.out.println(ll.peek());	// Expected Output : 20
 		System.out.println("----------------------------------------------\n");
 	}
@@ -159,13 +159,13 @@ class QueueTest {
 	    pbq.add(20);
 	    pbq.add(15);
 	
-		// queueÀÇ front °ª Ãâ·Â
+		// queueï¿½ï¿½ front ï¿½ï¿½ ï¿½ï¿½ï¿½
 	    System.out.println(pbq.peek());	// Expected Output : 10
 	
-	    // queueÀÇ front °ª Á¦°Å ¹× ¹ÝÈ¯
+	    // queueï¿½ï¿½ front ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È¯
 	    System.out.println(pbq.poll());	// Expected Output : 10
 	
-	    // Á¦°Å ÈÄ queueÀÇ front°ª Ãâ·Â
+	    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ queueï¿½ï¿½ frontï¿½ï¿½ ï¿½ï¿½ï¿½
 	    System.out.println(pbq.peek());	// Expected Output : 15
 		System.out.println("----------------------------------------------\n");
 	}
