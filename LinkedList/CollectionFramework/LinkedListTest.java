@@ -1,145 +1,80 @@
 package LinkedList.CollectionFramework;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class LinkedListTest {
-
-	@Before
-	void printTestName(String title)
-	{
-		System.out.println(title);
-	}
-	
-	@After
-	void printSeparateBar()
-	{
-		System.out.println("---------------------------------------------\n");
-	}
-	
 	@Test
-	void createAndUsingLinkedListTest() {
-		printTestName(new Object() {}.getClass().getEnclosingMethod().getName());
-		
-		LinkedList<String> ll = new LinkedList<String>();
-
-	    // Adding elements to the linked list
-	    ll.add("A");
-	    ll.add("B");
-	    ll.addLast("C");
-	    ll.addFirst("D");
-	    ll.add(2, "E");
-	
-	    System.out.println(ll);	// Expected Output : [D, A, E, B, C]
-	
-	    ll.remove("B");
-	    ll.remove(3);
-	    ll.removeFirst();		
-	    ll.removeLast();
-	
-	    System.out.println(ll);	// Expected Output : [A]
-	    
-	    printSeparateBar();
-	}
-	
-	@Test
-	void addLinkedListTest()
-	{
-		printTestName(new Object() {}.getClass().getEnclosingMethod().getName());
-
-		LinkedList<String> ll = new LinkedList<>(); 
-	    
-        ll.add("Geeks"); 
-        ll.add("Geeks"); 
-        ll.add(1, "For"); 
-    
-        System.out.println(ll); // Expected Output : [Geeks, For, Geeks]
-        printSeparateBar();
-	}
-	
-	@Test
-	void setLinkedListTest()
-	{
-		printTestName(new Object() {}.getClass().getEnclosingMethod().getName());
-		LinkedList<String> ll = new LinkedList<>(); 
-	    
-        ll.add("Geeks"); 
-        ll.add("Geeks"); 
-        ll.add(1, "Geeks"); 
-    
-        System.out.println("Initial LinkedList " + ll); 	// Expected Output : [Geeks, Geeks, Geeks]
-    
-        ll.set(1, "For"); 
-    
-        System.out.println("Updated LinkedList " + ll); 	// Expected Output : [Geeks, For, Geeks]
-        printSeparateBar();
+	public void add() throws Exception{
+	    //given
+	    List<Integer> list = new LinkedList<>();
+	    //when
+	    list.add(1);
+		list.add(2);
+		list.add(3);
+	    //then
+		assertThat(list).isEqualTo(Arrays.asList(1,2,3));
 	}
 
 	@Test
-	void removeLinkedListTest()
-	{
-		printTestName(new Object() {}.getClass().getEnclosingMethod().getName());
-		LinkedList<String> ll = new LinkedList<>(); 
-	    
-        ll.add("Geeks"); 
-        ll.add("Geeks"); 
-        ll.add(1, "For"); 
-    
-        System.out.println( 
-            "Initial LinkedList " + ll); 	// Expected Output : [Geeks, For, Geeks]
-    
-        ll.remove(1); 
-    
-        System.out.println( 
-            "After the Index Removal " + ll); // Expected Output : [Geeks, Geeks]
-    
-        ll.remove("Geeks"); 
-    
-        System.out.println( 
-            "After the Object Removal " + ll); // Expected Output : [Geeks]
-        printSeparateBar();
-	}
-	
-	@Test
-	void iteratorLinkedListTest()
-	{
-		printTestName(new Object() {}.getClass().getEnclosingMethod().getName());
-		LinkedList<String> ll 
-        = new LinkedList<>(); 
-
-	    ll.add("Geeks"); 
-	    ll.add("Geeks"); 
-	    ll.add(1, "For"); 
-	
-	    // �ݺ������� get�޼��带 ���Ͽ� ��ȸ
-	    for (int i = 0; i < ll.size(); i++) { 
-	
-	        System.out.print(ll.get(i) + " "); // Expected Output : Geeks For Geeks
-	    } 
-	
-	    System.out.println(); 
-	
-	    // �� ������ ���ؼ�  ���
-	    for (String str : ll) 
-	        System.out.print(str + " "); 		// Expected Output : Geeks For Geeks
-	    System.out.println();
-	    
-	    printSeparateBar();
-	}
-	
-	@Test
-	void addTest1() {
-		List<Integer> list = new LinkedList<Integer>();
-		
+	public void add_index() throws Exception{
+		//given
+		List<Integer> list = new LinkedList<>();
+		//when
 		list.add(1);
 		list.add(2);
 		list.add(3);
-		
-		list.add(4, 4);
-		System.out.println(list);
+		list.add(1,4);
+		//then
+		assertThat(list).isEqualTo(Arrays.asList(1,4,2,3));
 	}
+
+	@Test
+	public void remove_element() throws Exception{
+		//given
+		List<Integer> list = new LinkedList<>(Arrays.asList(1,2,3));
+		//when
+		boolean actual = list.remove(Integer.valueOf(2));
+	    //then
+		assertThat(actual).isTrue();
+		assertThat(list).isEqualTo(Arrays.asList(1,3));
+	}
+
+	@Test
+	public void remove_index() throws Exception{
+		//given
+		List<Integer> list = new LinkedList<>(Arrays.asList(1,2,3));
+		//when
+		int actual = list.remove(1);
+		//then
+		assertThat(actual).isEqualTo(2);
+		assertThat(list).isEqualTo(Arrays.asList(1,3));
+	}
+
+	@Test
+	public void set() throws Exception{
+	    //given
+		List<Integer> list = new LinkedList<>(Arrays.asList(1,2,3));
+	    //when
+	    list.set(1,4);
+	    //then
+		assertThat(list).isEqualTo(Arrays.asList(1,4,3));
+	}
+	
+	@Test
+	public void get() throws Exception{
+	    //given
+		List<Integer> list = new LinkedList<>(Arrays.asList(1,2,3));
+	    //when
+	    int actual = list.get(1);
+	    //then
+		assertThat(actual).isEqualTo(2);
+	}
+
+
 }

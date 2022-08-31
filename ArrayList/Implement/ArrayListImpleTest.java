@@ -5,7 +5,9 @@ package ArrayList.Implement;
 import org.junit.Test;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -37,6 +39,17 @@ public class ArrayListImpleTest {
 
 		//then
 		assertThat(list.toString()).isEqualTo(Arrays.asList(1,3,2).toString());
+	}
+
+	@Test
+	public void insert2() throws Exception{
+	    //given
+		ArrayListImple<Integer> list = new ArrayListImple<Integer>();
+
+	    //when
+	    list.add(2,1);
+	    //then
+		System.out.println(list.toString());
 	}
 	
 	@Test

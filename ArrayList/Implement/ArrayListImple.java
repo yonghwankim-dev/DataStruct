@@ -32,6 +32,7 @@ class ArrayListImple<T> {
 			reSize();
 		}
 
+
 		if(size == index)
 		{
 			arr[size] = element;

@@ -1,61 +1,18 @@
 package LinkedList.Implement.circularList;
 
-public class CircularList<E> implements CircularListI<E> {
+class CircularList<E> implements List<E> {
 
-	Node head;
-	int numofData;
+	private Node head;
+	private int numOfData;
 	
 	public CircularList() {
 		head = null;
-		numofData = 0;
+		numOfData = 0;
 	}
-	
-	/**
-	 * 리스트 맨앞에 데이터를 추가함
-	 * @param data 삽입하고자 하는 데이터 값
-	 */
-	@Override
-	public void push(E data) {
-		Node<E> newNode = new Node(data);
-		Node<E> cur = head;
-		
-		// 맨앞 노드의 next는 head를 가리킴
-		newNode.next = head;
-		
-		if(head == null)	// 리스트가 비어있는 경우
-		{
-			newNode.next = newNode;
-		}
-		else	// 리스트가 비어있지 않은 경우
-		{
-			// cur 노드를 마지막 노드로 이동시킴
-			while(cur.next != head)
-			{
-				cur = cur.next;
-			}
-			// cur 노드의 next를 맨앞의 newNode를 가리킴
-			cur.next = newNode;
-		}
-		
-		// head를 맨 앞의 노드로 이동시킴
-		head = newNode;
-		
-		numofData++;
-	}
-	
-	/**
-	 * 리스트에서 data 값을 가진 노드를 제거함
-	 * 
-	 * 만약 제거하고자 하는 data 값 노드가 2개 이상인 경우
-	 * 제일 앞의 노드를 제거함
-	 * 
-	 * @param data	제거하고자 하는 데이터 값
-	 * @return
-	 */
+
 	@Override
 	public E remove(E data) {
-		if(head == null)
-		{
+		if(isEmpty()) {
 			return null;
 		}
 		
@@ -78,7 +35,7 @@ public class CircularList<E> implements CircularListI<E> {
 		if(cur == head && cur.next == head)
 		{
 			head = null;
-			numofData--;
+			numOfData--;
 			return (E) head.data;
 		}
 		
@@ -103,33 +60,182 @@ public class CircularList<E> implements CircularListI<E> {
 			prev.next = cur.next;
 		}
 
-		numofData--;
+		numOfData--;
 		return (E) head.data;
 	}
 
-	/**
-	 * 리스트의 요소들을 출력함
-	 */
-	@Override
-	public void printList() {
-		Node<E> cur  = head;
-		
-		for(int i = 0; i < numofData && cur != null; i++)
-		{
-			System.out.print(cur.data + " ");
-			cur = cur.next;
-		}
-		System.out.println();
-	}
-
-	/**
-	 * 리스트의 요소 개수를 반환함
-	 * @return 리스트 요소 개수
-	 */
 	@Override
 	public int size() {
-		return numofData;
+		return numOfData;
 	}
-	
-	
+
+	@Override
+	public void addFirst(E data) {
+		Node<E> newNode = new Node(data);
+		Node<E> cur = head;
+
+		// 맨앞 노드의 next는 head를 가리킴
+		newNode.next = head;
+
+		// 1. 자료구조가 비어있는 경우
+		if(head == null)
+		{
+			newNode.next = newNode;
+		}
+		else	// 리스트가 비어있지 않은 경우
+		{
+			// cur 노드를 마지막 노드로 이동시킴
+			while(cur.next != head)
+			{
+				cur = cur.next;
+			}
+			// cur 노드의 next를 맨앞의 newNode를 가리킴
+			cur.next = newNode;
+		}
+
+		// head를 맨 앞의 노드로 이동시킴
+		head = newNode;
+
+		numOfData++;
+	}
+
+	@Override
+	public void addLast(E data) {
+		Node<E> newNode = new Node(data);
+		Node<E> cur = head;
+
+		newNode.next = head;
+
+		// 1. 자료구조가 비어있는 경우
+		if(head == null){
+			newNode.next = newNode;
+			head = newNode;
+		}else{
+			while(cur.next != head){
+				cur = cur.next;
+			}
+			cur.next = newNode;
+		}
+		numOfData++;
+	}
+
+	@Override
+	public E removeFirst() {
+		Node<E> cur = head;
+		E delVal;
+		// 1. 자료구조가 비어있는 경우
+		if(isEmpty()){
+			return null;
+		}
+
+		delVal = (E) head.data;
+
+		// 2. 자료구조에 요소가 하나만 있는 경우
+		if(head.next == head){
+			head = null;
+		}else{ // 3. 자료구조의 첫번째 요소를 제거하려고 하는 경우
+			while(cur.next != head){
+				cur = cur.next;
+			}
+			cur.next = cur.next.next;
+			head = head.next;
+		}
+
+		numOfData--;
+		return delVal;
+	}
+
+	@Override
+	public E removeLast() {
+		Node<E> prev = null;
+		Node<E> cur = head;
+		E delVal;
+
+		// 1. 자료구조가 비어있는 경우
+		if(isEmpty()){
+			return null;
+		}
+
+		// 2. 자료구조에 요소가 한개인 경우
+		if(head.next == head){
+			delVal = (E) head.data;
+			head = null;
+		}else{ // 4. 자료구조의 마지막 요소를 제거하려고 하는 경우
+			while(cur.next != head){
+				prev = cur;
+				cur = cur.next;
+			}
+			prev.next = cur.next;
+			delVal = cur.data;
+		}
+
+		numOfData--;
+		return delVal;
+	}
+
+	@Override
+	public boolean contains(E data) {
+		Node<E> cur = head;
+
+		// 1. 자료구조에 요소가 하나도 없을때
+		if(isEmpty()){
+			return false;
+		}
+
+		// 2. 자료구조에 요소가 1개 있는 경우
+		if(cur.next == head){
+			return cur.data.equals(data);
+		}
+
+		while(cur.next != head){
+			if(cur.data.equals(data)){
+				return true;
+			}
+			cur = cur.next;
+		}
+		// 3. 마지막 요소를 찾을려고 하는 경우
+		if(cur.data.equals(data)){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public E peekFirst() {
+		return (E) head.data;
+	}
+
+	@Override
+	public E peekLast() {
+		Node<E> cur = head;
+
+		while(cur.next != head){
+			cur = cur.next;
+		}
+		return cur.data;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return head == null;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		Node<E> cur = head;
+
+		if(isEmpty()){
+			return "";
+		}
+
+		while(cur.next != head)
+		{
+			sb.append(cur.data + " ");
+			cur=cur.next;
+		}
+		sb.append(cur.data+"\n");
+
+		return sb.toString().trim();
+	}
 }

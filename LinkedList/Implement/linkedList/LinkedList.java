@@ -3,7 +3,7 @@ package LinkedList.Implement.linkedList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class LinkedList<E> implements ListI<E>{
+class LinkedList<E> implements List<E> {
 	class Node<E>{
 		E data;
 		Node<E> next;
@@ -30,15 +30,13 @@ public class LinkedList<E> implements ListI<E>{
 		// index가 가리키는 노드의 데이터값을 반환 및 노드 이동
 		@Override
 		public E next() {
-			if(!hasNext())
-			{
+			if(!hasNext()) {
 				throw new NoSuchElementException();
 			}
 			E val = index.data;
 			index = index.next;
 			return val;
 		}
-		
 	}
 	
 	private Node<E> head;
@@ -53,10 +51,10 @@ public class LinkedList<E> implements ListI<E>{
 	
 	@Override
 	public void addFirst(E data) {
-		Node<E> newNode = new Node<E>(data);
+		Node<E> newNode = new Node<>(data);
 		
 		// 1. 경계조건, 자료구조가 비어있는 경우
-		if(head==null)
+		if(head == null)
 		{
 			tail = newNode;
 		}
@@ -68,10 +66,9 @@ public class LinkedList<E> implements ListI<E>{
 	
 	@Override
 	public void addLast(E data) {
-		
-		Node<E> newNode = new Node<E>(data);
+		Node<E> newNode = new Node<>(data);
 		// 1. 경계조건, 자료구조가 비어있는 경우
-		if(head==null)
+		if(head == null)
 		{
 			head = tail = newNode;
 			currentSize++;
@@ -80,15 +77,13 @@ public class LinkedList<E> implements ListI<E>{
 		
 		tail.next = newNode;		
 		tail = newNode;
-		
 		currentSize++;
 	}
 	
 	@Override
 	public E removeFirst() {
 		// 경계조건 1. Empty, 자료구조가 비어있는 경우
-		if(head==null)
-		{
+		if(isEmpty()) {
 			return null;
 		}
 		
@@ -96,30 +91,31 @@ public class LinkedList<E> implements ListI<E>{
 		
 		// 경계조건 2. Single Element, 삭제할 노드가 단 하나남은 노드인 경우 
 		// head, tail은 null을 가리키도록 함
-		if(head==tail)
-		{
+		if(head == tail) {
 			head = tail = null;
+			currentSize--;
+			return delData;
 		}
-		else
-		{
-			head = head.next;
-		}
-		
+
+		head = head.next;
 		currentSize--;
-		
 		return delData;
 	}
-	
+
+	@Override
+	public boolean isEmpty() {
+		return head == null;
+	}
+
 	@Override
 	public E removeLast() {
 		// 경계조건 1. Empty, 자료구조가 비어있는 경우
-		if(head==null)
-		{
+		if(isEmpty()) {
 			return null;
 		}
-		
+
 		// 경계조건 2. Single Element, 자료구조에서 요소가 하나 있는 경우
-		if(head==tail)
+		if(head == tail)
 		{
 			return removeFirst();
 		}
@@ -178,7 +174,7 @@ public class LinkedList<E> implements ListI<E>{
 	@Override
 	public boolean contains(E obj)
 	{
-		Node<E> current=head;
+		Node<E> current = head;
 		
 		// 경계 조건 Empty 포함
 		while(current!=null)
@@ -198,7 +194,7 @@ public class LinkedList<E> implements ListI<E>{
 	
 	@Override
 	public E peekFirst() {
-		if(head==null)
+		if(isEmpty())
 		{
 			return null;
 		}
@@ -207,7 +203,7 @@ public class LinkedList<E> implements ListI<E>{
 	
 	@Override
 	public E peekLast() {
-		if(tail==null)
+		if(tail == null)
 		{
 			return null;
 		}

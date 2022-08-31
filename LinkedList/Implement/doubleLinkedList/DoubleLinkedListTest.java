@@ -3,47 +3,88 @@ package LinkedList.Implement.doubleLinkedList;
 
 import org.junit.Test;
 
-class DoubleLinkedListTest {
+import static org.assertj.core.api.Assertions.*;
+
+public class DoubleLinkedListTest {
 
 	@Test
-	void addFirstTest() {
-		DoubleLinkedList<String> list = new DoubleLinkedList<String>();
+	public void addFirst() {
+		//given
+		DoubleLinkedList<String> list = new DoubleLinkedList<>();
+
+		//when
 		list.addFirst("A");
 		list.addFirst("B");
 		list.addFirst("C");
-		System.out.println(list);	// Expected Output : C B A
+
+		//then
+		assertThat(list.toString()).isEqualTo("C B A");
 	}
 	
 	@Test
-	void addLastTest() {
+	public void addLast() {
+		//given
+		DoubleLinkedList<String> list = new DoubleLinkedList<>();
+		//when
+		list.addLast("A");
+		list.addLast("B");
+		list.addLast("C");
+		//then
+		assertThat(list.toString()).isEqualTo("A B C");
+	}
+	
+	@Test
+	public void removeFirst() {
+		//given
 		DoubleLinkedList<String> list = new DoubleLinkedList<String>();
 		list.addLast("A");
 		list.addLast("B");
 		list.addLast("C");
-		System.out.println(list);	// Expected Output : A B C	
+		//when
+		String actual = list.removeFirst();
+		//then
+		assertThat(actual).isEqualTo("A");
+		assertThat(list.toString()).isEqualTo("B C");
 	}
 	
 	@Test
-	void removeFirstTest() {
+	public void removeLast() {
+		//given
 		DoubleLinkedList<String> list = new DoubleLinkedList<String>();
 		list.addLast("A");
 		list.addLast("B");
 		list.addLast("C");
-		System.out.print(list.removeFirst());
-		System.out.print(list.removeFirst());
-		System.out.print(list.removeFirst()+"\n");
+		//when
+		String actual = list.removeLast();
+		//then
+		assertThat(actual).isEqualTo("C");
+		assertThat(list.toString()).isEqualTo("A B");
 	}
-	
+
 	@Test
-	void removeLastTest() {
-		DoubleLinkedList<String> list = new DoubleLinkedList<String>();
+	public void peekFirst() throws Exception{
+	    //given
+	    DoubleLinkedList<String> list = new DoubleLinkedList<>();
 		list.addLast("A");
 		list.addLast("B");
 		list.addLast("C");
-		System.out.print(list.removeLast());
-		System.out.print(list.removeLast());
-		System.out.print(list.removeLast()+"\n");
+	    //when
+	    String actual = list.peekFirst();
+	    //then
+		assertThat(actual).isEqualTo("A");
 	}
-	
+
+	@Test
+	public void peekLast() throws Exception{
+		//given
+		DoubleLinkedList<String> list = new DoubleLinkedList<>();
+		list.addLast("A");
+		list.addLast("B");
+		list.addLast("C");
+		//when
+		String actual = list.peekLast();
+		//then
+		assertThat(actual).isEqualTo("C");
+	}
 
 }
