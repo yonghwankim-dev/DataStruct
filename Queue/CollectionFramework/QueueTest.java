@@ -2,172 +2,54 @@ package Queue.CollectionFramework;
 
 
 
+
 import org.junit.Test;
 
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
-import java.util.concurrent.PriorityBlockingQueue;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class QueueTest {
 
 	@Test
-	void createQueueTest() {
-		System.out.println("createQueueTest");
+	public void offer_poll() {
+		//given
+		Queue<Integer> queue = new LinkedList<>();
+
+		//when
+		queue.offer(10);
+		queue.offer(20);
+		queue.offer(30);
+		queue.offer(40);
 		
-		Queue<Integer> q
-        = new LinkedList<>();
+		int actual1 = queue.poll();
+		int actual2 = queue.poll();
+		int actual3 = queue.poll();
+		int actual4 = queue.poll();
 
-	    // {0, 1, 2, 3, 4} �����͸� queue�� �߰�
-	    for (int i = 0; i < 5; i++)
-	        q.add(i);
-	
-	    // ť�� ���� ���
-	    System.out.println("Elements of queue "
-	                       + q);	// Expected Output : [0, 1, 2, 3, 4]
-	
-	    // Queue�� ���� ���� ������ ����
-	    int removedele = q.remove();
-	    System.out.println("removed element-"
-	                       + removedele);	// Expected Output : 0
-	
-	    System.out.println(q);	// Expected Output : [1, 2, 3, 4]
-	
-	    // Queue�� ���� ���� ������ Ȯ��
-	    int head = q.peek();
-	    System.out.println("head of queue-"
-	                       + head);	// Expected Output : 1
-	
-		// Queue�� ������ Ȯ��
-	    int size = q.size();
-	    System.out.println("Size of queue-"
-	                       + size);	// Expected Output : 4
-	    
-	    System.out.println("----------------------------------------------\n");
+		//then
+		assertThat(actual1).isEqualTo(10);
+		assertThat(actual2).isEqualTo(20);
+		assertThat(actual3).isEqualTo(30);
+		assertThat(actual4).isEqualTo(40);
 	}
-	
-	@Test
-	void addQueueTest()
-	{
-		System.out.println("addQueueTest");
-		Queue<String> pq = new PriorityQueue<>();
-		  
-        pq.add("Geeks");
-        pq.add("For");
-        pq.add("Geeks");
-  
-        System.out.println(pq);	// Expected Output : [For, Geeks, Geeks]
-        System.out.println("----------------------------------------------\n");
-	}
-	
-	@Test
-	void removeAndPollQueueTest()
-	{
-		System.out.println("removeAndPollQueueTest");
-		Queue<String> pq = new PriorityQueue<>();
-		  
-        pq.add("Geeks");
-        pq.add("For");
-        pq.add("Geeks");
-  
-        System.out.println("Initial Queue " + pq);	// Expected Output : [For, Geeks, Geeks]
-  
-        pq.remove("Geeks");
-  
-        System.out.println("After Remove " + pq);	// Expected Output : [For, Geeks]
-  
-        System.out.println("Poll Method " + pq.poll());	// Expected Output : For
-  
-        System.out.println("Final Queue " + pq); // Expected Output : [Geeks]
-        System.out.println("----------------------------------------------\n");
-	}
-	
-	@Test
-	void iteratorQueueTest()
-	{
-		System.out.println("iteratorQueueTest");
-		Queue<String> pq = new PriorityQueue<>();
-		  
-        pq.add("Geeks");
-        pq.add("For");
-        pq.add("Geeks");
-  
-        Iterator<String> iterator = pq.iterator();
-  
-        while (iterator.hasNext()) {
-            System.out.print(iterator.next() + " "); // Expected Output : For Geeks Geeks
-        }
-		System.out.println("----------------------------------------------\n");
-	}
-	
-	@Test
-	void priorityQueueClassTest()
-	{
-		System.out.println("priorityQueueClassTest");
-		// PriorityQueue ��ü ����
-        Queue<Integer> pQueue
-            = new PriorityQueue<Integer>();
-  
-        // ������ �߰�
-        pQueue.add(10);
-        pQueue.add(20);
-        pQueue.add(15);
 
-        // PriorityQueue�� ���� �ϼ��� ��Ҹ� ����Ѵ�.
-        System.out.println(pQueue.peek());	// Expected Output : 10
-  
-        // PriorityQueue�� ���� �ϼ��� ��Ҹ� �����ϰ� ��ȯ�Ѵ�.
-        System.out.println(pQueue.poll());	// Expected Output : 10
-  
-        // PriorityQueue�� �ٽ� �ϼ��� ��Ҹ� ����Ѵ�.
-        System.out.println(pQueue.peek());	// Expected Output : 15
-		System.out.println("----------------------------------------------\n");
-	}
-	
-	@Test
-	void linkedListClassTest()
-	{
-		System.out.println("linkedListClassTest");
-		// LinkedList ��� ť ��ü ����
-        Queue<Integer> ll
-            = new LinkedList<Integer>();
-  
-        ll.add(10);
-        ll.add(20);
-        ll.add(15);
-  
-		// ť�� ���� �տ� �ִ� ���� ����Ѵ�.
-        System.out.println(ll.peek());	// Expected Output : 10
-  
-        // ť�� ���� �տ� �ִ� ���� �����ϰ� ��ȯ�Ѵ�.
-        System.out.println(ll.poll());	// Expected Output : 10
-  
-        // �ٽ� ť�� ���� �տ� �ִ� ���� ����Ѵ�.
-        System.out.println(ll.peek());	// Expected Output : 20
-		System.out.println("----------------------------------------------\n");
-	}
-	
-	@Test
-	void priorityBlockingQueueClassTest()
-	{
-		System.out.println("priorityBlockingQueueClassTest");
-		Queue<Integer> pbq
-        = new PriorityBlockingQueue<Integer>();
 
-	    pbq.add(10);
-	    pbq.add(20);
-	    pbq.add(15);
-	
-		// queue�� front �� ���
-	    System.out.println(pbq.peek());	// Expected Output : 10
-	
-	    // queue�� front �� ���� �� ��ȯ
-	    System.out.println(pbq.poll());	// Expected Output : 10
-	
-	    // ���� �� queue�� front�� ���
-	    System.out.println(pbq.peek());	// Expected Output : 15
-		System.out.println("----------------------------------------------\n");
+
+	@Test
+	public void peek() throws Exception{
+		//given
+		Queue<Integer> q = new LinkedList<>();
+		q.offer(1);
+		q.offer(2);
+		q.offer(3);
+		
+		//when
+		int actual = q.peek();
+		//then
+		assertThat(actual).isEqualTo(1);
 	}
 
 }

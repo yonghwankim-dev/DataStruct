@@ -1,14 +1,14 @@
 package Queue.Implement;
 
-public class QueueAsLinkedList {
+class QueueAsLinkedList<E> {
 	Node head, tail;
-	int numOfData;
+	int size;
 	
-	static class Node{
-		int data;
-		Node next;
+	private static class Node<E>{
+		E data;
+		Node<E> next;
 		
-		public Node(int data) {
+		public Node(E data) {
 			this.data = data;
 			this.next = null;
 		}
@@ -17,71 +17,60 @@ public class QueueAsLinkedList {
 	public QueueAsLinkedList()
 	{
 		head = tail = null;
-		numOfData = 0;
+		size = 0;
 	}
-	
-	// 큐에 데이터를 삽입
-	public void enqueue(int item)
+
+	public void enqueue(E item)
 	{
 		Node newNode = new Node(item);
-		
+
+		size++;
 		if(head == null) {
 			head = tail = newNode;
+			return;
 		}
-		else
-		{
-			tail.next = newNode;
-			tail = newNode;
-		}
-		
-		numOfData++;
+		tail.next = newNode;
+		tail = newNode;
 	}
-	
-	// 큐에 데이터를 제거 및 반환
-	int dequeue()
+
+	public E dequeue()
 	{
 		if (isEmpty()) {
-			return Integer.MIN_VALUE;
+			throw new IllegalStateException();
 		}
 		
-		int item = head.data;
-		
-		if(numOfData == 1) {
+		E item = (E) head.data;
+
+		if(size == 1) {
 			head = tail = null;
+			size--;
+			return item;
 		}
-		else{
-			head = head.next;
-		}
-		
-		numOfData--;
-				
+		head = head.next;
+		size--;
 		return item;
 	}
 	
-	// 큐가 비어있는지 검사
+
 	public boolean isEmpty()
 	{
-		return (numOfData == 0);
-	}
-	
-	// 큐의 제일 앞쪽 데이터 반환
-	int front()
-	{
-		if (isEmpty()) {
-			return Integer.MIN_VALUE;
-		}
-		
-		return head.data;
+		return size == 0;
 	}
 
-	// 큐의 제일 뒤쪽 데이터 반환
-	int rear()
+	public E front()
 	{
 		if (isEmpty()) {
-			return Integer.MIN_VALUE;
+			throw new IllegalStateException();
 		}
-		
-		return tail.data;
+		return (E) head.data;
+	}
+
+	public E rear()
+	{
+		if (isEmpty()) {
+			throw new IllegalStateException();
+		}
+		return (E) tail.data;
 	}
 
 	@Override

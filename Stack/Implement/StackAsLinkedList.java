@@ -1,71 +1,54 @@
 package Stack.Implement;
 
-public class StackAsLinkedList {
+import java.util.EmptyStackException;
+
+class StackAsLinkedList<E> {
 	StackNode root;
 	
-	static class StackNode{
-		int data;
+	private static class StackNode<E>{
+		E data;
 		StackNode next;
 		
-		StackNode(int data) {
+		public StackNode(E data) {
 			this.data = data;
 		}
 	}
-	
-	public boolean isEmpty()
-	{
-		if(root==null) 
-		{
-			return true;
-		}
-		else 
-		{
-			return false;
-		}
+
+	private StackNode createNode(E data){
+		return new StackNode(data);
 	}
 	
-	public void push(int data)
-	{
-		StackNode newNode = new StackNode(data);
+	public boolean empty() {
+		return root == null;
+	}
+	
+	public E push(E data) {
+		StackNode newNode = createNode(data);
 		
-		if(root==null)
-		{
+		if(empty()) {
 			root = newNode;
+			return (E) newNode.data;
 		}
-		else
-		{
-			StackNode temp = root;
-			root = newNode;
-			newNode.next = temp;
-		}
-		System.out.println(data + " pushed to stack");
+		StackNode prevTop = root;
+		root = newNode;
+		newNode.next = prevTop;
+		return (E) newNode.data;
 	}
 	
-	public int pop()
-	{
-		int popped = Integer.MIN_VALUE;
-		if(root==null)
-		{
-			System.out.println("Stack is Empty");
+	public E pop() {
+		E popped;
+		if(empty()) {
+			throw new EmptyStackException();
 		}
-		else
-		{
-			popped = root.data;
-			root = root.next;
-		}
+		popped = (E) root.data;
+		root = root.next;
 		return popped;
 	}
 	
-	public int peek()
-	{
-		if(root==null)
-		{
-			System.out.println("Stack is Empty");
-			return Integer.MIN_VALUE;
+	public E peek() {
+		if(empty()) {
+			throw new EmptyStackException();
 		}
-		else
-		{
-			return root.data;
-		}
+		return (E) root.data;
 	}
 }

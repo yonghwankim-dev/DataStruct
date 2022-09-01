@@ -1,58 +1,53 @@
 package Stack.Implement;
 
-public class StackAsArray {
-	static final int MAX = 1000;
-	int top;
-	int a[] = new int[MAX];
+import java.util.EmptyStackException;
+
+class StackAsArray<E> {
+	private int capacity;
+	private int top;
+	private E[] arr;
+
+	public StackAsArray() {
+		capacity = 10;
+		top = -1;
+		arr = (E[]) new Object[capacity];
+	}
 	
-	boolean isEmpty()
-	{
+	public boolean push(E x) {
+		if(overflow()) {
+			reSize();
+		}
+		arr[++top] = x;
+		return true;
+	}
+	
+	public E pop() {
+		if(empty()) {
+			throw new EmptyStackException();
+		}
+		return arr[top--];
+	}
+	
+	public E peek() {
+		if(empty()){
+			throw new EmptyStackException();
+		}
+		return arr[top];
+	}
+
+	public boolean empty() {
 		return (top<0);
 	}
-	StackAsArray()
-	{
-		top = -1;
+
+	public boolean overflow(){
+		return top >= capacity;
 	}
-	
-	boolean push(int x)
-	{
-		if(top>=(MAX-1)) {
-			System.out.println("Stack Overflow");
-			return false;
-		}
-		else
-		{
-			a[++top] = x;
-			System.out.println(x + " pushed into stack");
-			return true;
-		}
-	}
-	
-	int pop()
-	{
-		if(top<0)
-		{
-			System.out.println("Stack Underflow");
-			return 0;
-		}
-		else
-		{
-			int x = a[top--];
-			return x;
-		}
-	}
-	
-	int peek()
-	{
-		if(top<0)
-		{
-			System.out.println("Stack Underflow");
-			return 0;
-		}
-		else
-		{
-			int x = a[top];
-			return x;
-		}
+
+	private void reSize() {
+		E[] dummy = (E[]) new Object[capacity*2];
+		System.arraycopy(arr, 0, dummy, 0, capacity);
+		this.capacity *= 2;
+		arr = (E[]) new Object[this.capacity];
+		System.arraycopy(dummy, 0, arr, 0, dummy.length);
 	}
 }

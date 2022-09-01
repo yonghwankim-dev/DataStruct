@@ -5,46 +5,52 @@ package Stack.Implement;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 
-class StackAsLinkedListTest {
+
+public class StackAsLinkedListTest {
 
 	@Test
-	void pushTest() {
-		StackAsLinkedList s = new StackAsLinkedList();
-		s.push(10);
-		s.push(20);
-		s.push(30);
-		
-		Assert.assertEquals(30, s.peek());
-	}
-	
-	@Test
-	void popTest() {
-		StackAsLinkedList s = new StackAsLinkedList();
-		s.push(10);
-		s.push(20);
-		s.push(30);
-		
-		Assert.assertEquals(30, s.pop());
-		Assert.assertEquals(20, s.pop());
-		Assert.assertEquals(10, s.pop());
-	}
-	
-	@Test
-	void peekEmeptyStackTest() {
-		StackAsLinkedList s = new StackAsLinkedList();
-		
-		Assert.assertEquals(Integer.MIN_VALUE, s.peek());	
+	public void push() {
+		//given
+		StackAsLinkedList<Integer> stack = new StackAsLinkedList<>();
+		//when
+		stack.push(10);
+		stack.push(20);
+		stack.push(30);
+		//then
+		assertThat(stack.peek()).isEqualTo(30);
 	}
 
 	@Test
-	void isEmptyTest() {
-		StackAsLinkedList s = new StackAsLinkedList();
-		
-		Assert.assertEquals(true, s.isEmpty());
-		s.push(10);
-		Assert.assertEquals(false, s.isEmpty());
+	public void pop() {
+		//given
+		StackAsLinkedList<Integer> stack = new StackAsLinkedList();
+		stack.push(10);
+		stack.push(20);
+		stack.push(30);
+
+		//when
+		int actual1 = stack.pop();
+		int actual2 = stack.pop();
+		int actual3 = stack.pop();
+		//then
+		assertThat(actual1).isEqualTo(30);
+		assertThat(actual2).isEqualTo(20);
+		assertThat(actual3).isEqualTo(10);
 	}
 
+	@Test
+	public void peek() throws Exception{
+	    //given
+		StackAsLinkedList<Integer> stack = new StackAsLinkedList();
+		stack.push(10);
+		stack.push(20);
+		stack.push(30);
+	    //when
+	    int actual = stack.peek();
+	    //then
+		assertThat(actual).isEqualTo(30);
+	}
 
 }

@@ -2,61 +2,57 @@ package Queue.Implement;
 
 
 
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class QueueAsLinkedListTest {
-	// enqueue, dequeue, isempty, front, rear
-	
-	private QueueAsLinkedList queue;
-	
-	@Before
-	void setup() {
-		queue = new QueueAsLinkedList();
-	}
-	
-	void setupEnqueue() {
-		queue.enqueue(10);
-		queue.enqueue(20);
-		queue.enqueue(30);
+	@Test
+	public void enqueue_dequeue() throws Exception{
+	    //given
+		QueueAsLinkedList<Integer> q = new QueueAsLinkedList();
+	    //when
+	    q.enqueue(1);
+		q.enqueue(2);
+		q.enqueue(3);
+
+		int actual1 = q.dequeue();
+		int actual2 = q.dequeue();
+		int actual3 = q.dequeue();
+	    //then
+		assertThat(actual1).isEqualTo(1);
+		assertThat(actual2).isEqualTo(2);
+		assertThat(actual3).isEqualTo(3);
 	}
 	
 	@Test
-	void enqueueTest() {
-		queue.enqueue(10);
-		queue.enqueue(20);
-		queue.enqueue(30);
-		
-		Assert.assertEquals("10 20 30", queue.toString());
+	public void front() throws Exception{
+		//given
+		QueueAsLinkedList<Integer> q = new QueueAsLinkedList();
+		q.enqueue(1);
+		q.enqueue(2);
+		q.enqueue(3);
+		//when
+		int actual = q.front();
+	    //then
+		assertThat(actual).isEqualTo(1);
 	}
 	
 	@Test
-	void dequeueTest() {
-		setupEnqueue();
-		
-		Assert.assertEquals(10, queue.dequeue());
-		Assert.assertEquals(20, queue.dequeue());
-		Assert.assertEquals(30, queue.dequeue());
-		Assert.assertEquals(Integer.MIN_VALUE, queue.dequeue());
+	public void rear() throws Exception{
+		//given
+		QueueAsLinkedList<Integer> q = new QueueAsLinkedList();
+		q.enqueue(1);
+		q.enqueue(2);
+		q.enqueue(3);
+		//when
+		int actual = q.rear();
+		//then
+		assertThat(actual).isEqualTo(3);
 	}
 	
-	@Test
-	void isEmptyTest() {
-		Assert.assertEquals(true, queue.isEmpty());
-	}
-	
-	@Test
-	void frontTest() {
-		setupEnqueue();
-		
-		Assert.assertEquals(10, queue.front());
-	}
-	
-	@Test
-	void rearTest() {
-		setupEnqueue();		
-		Assert.assertEquals(30, queue.rear());
-	}
 
 }

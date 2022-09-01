@@ -2,50 +2,43 @@ package Stack.Implement;
 
 
 
-import java.util.Arrays;
-
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.*;
 
-class StackAsArrayTest {
+
+public class StackAsArrayTest {
 
 	@Test
-	void pushTest() {
-		StackAsArray s = new StackAsArray();
-		s.push(10);
-		s.push(20);
-		s.push(30);
-		
-		Assert.assertEquals(30, s.peek());
+	public void push() {
+		//given
+		StackAsArray<Integer> stack = new StackAsArray<>();
+		//when
+		stack.push(10);
+		stack.push(20);
+		stack.push(30);
+		//then
+		assertThat(stack.peek()).isEqualTo(30);
 	}
 	
 	@Test
-	void popTest() {
-		StackAsArray s = new StackAsArray();
-		s.push(10);
-		s.push(20);
-		s.push(30);
-		
-		Assert.assertEquals(30, s.pop());
-		Assert.assertEquals(20, s.pop());
-		Assert.assertEquals(10, s.pop());
-	}
-	
-	@Test
-	void peekEmeptyStackTest() {
-		StackAsArray s = new StackAsArray();
-		
-		Assert.assertEquals(0, s.peek());	
-	}
+	public void pop() {
+		//given
+		StackAsArray<Integer> stack = new StackAsArray();
+		stack.push(10);
+		stack.push(20);
+		stack.push(30);
 
-	@Test
-	void isEmptyTest() {
-		StackAsArray s = new StackAsArray();
-		
-		Assert.assertEquals(true, s.isEmpty());
-		s.push(10);
-		Assert.assertEquals(false, s.isEmpty());
+		//when
+		int actual1 = stack.pop();
+		int actual2 = stack.pop();
+		int actual3 = stack.pop();
+		//then
+		assertThat(actual1).isEqualTo(30);
+		assertThat(actual2).isEqualTo(20);
+		assertThat(actual3).isEqualTo(10);
 	}
 	
 }
